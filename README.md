@@ -4,7 +4,7 @@ Various monitoring aspects in an IT environment include:
    - Servers (CPU, memory, disk usage, etc.)
    - Network devices (routers, switches, firewalls)
    - Storage systems (SAN/NAS)
-   **Infrastructure Monitoring:**
+   Infrastructure Monitoring:
    - Nagios
    - Zabbix
    - Prometheus
