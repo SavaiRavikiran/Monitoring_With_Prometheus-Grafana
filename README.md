@@ -12,7 +12,7 @@ There are many different types of monitoring, but some of the most common includ
 
 Monitoring can be done manually or automatically. Manual monitoring involves manually collecting and analyzing data. Automatic monitoring involves using software to collect and analyze data. Automatic monitoring is typically more efficient than manual monitoring, but it can be more expensive to set up.
 
-**The benefits of monitoring include:**
+## **The benefits of monitoring include:**
 
 **Identifying and troubleshooting problems:** Monitoring can help organizations to identify and troubleshoot problems quickly. This can help to prevent outages and to improve the overall performance of the system.
 
