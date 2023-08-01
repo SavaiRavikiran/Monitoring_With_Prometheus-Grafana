@@ -153,7 +153,10 @@ Each of these tools specializes in different monitoring aspects and provides a r
 
 # **Prometheus: Overview and Architecture**
 
-Prometheus is an open-source monitoring and alerting system that is widely used in the DevOps and cloud-native ecosystem. It was developed by SoundCloud and later donated to the Cloud Native Computing Foundation (CNCF). Prometheus is designed to monitor systems, applications, and services in real-time and help detect and resolve issues proactively.
+Prometheus is an open-source monitoring and alerting system that is widely used in the DevOps and cloud-native ecosystem. It was developed by SoundCloud and later donated to the Cloud Native Computing Foundation (CNCF). Prometheus is designed to 
+![image](https://github.com/RavikiranSavai/Monitoring_With_Prometheus-Grafana/assets/76962621/2a58bc67-78be-4f8e-88b2-1f0e23d454ea)
+
+
 
 **Key Features of Prometheus:**
 1. **Multi-Dimensional Data Model:** Prometheus follows a multi-dimensional data model, where each data point is identified by a combination of key-value pairs. This allows for flexible and efficient querying and aggregation of metrics.
