@@ -4,7 +4,7 @@ Various monitoring aspects in an IT environment include:
    - Servers (CPU, memory, disk usage, etc.)
    - Network devices (routers, switches, firewalls)
    - Storage systems (SAN/NAS)
-1. **Infrastructure Monitoring:**
+   **Infrastructure Monitoring:**
    - Nagios
    - Zabbix
    - Prometheus
@@ -15,7 +15,7 @@ Various monitoring aspects in an IT environment include:
    - Application response times
    - Error rates and exceptions
    - Throughput and request rates
-2. **Application Monitoring:**
+   **Application Monitoring:**
    - New Relic
    - Datadog
    - AppDynamics
@@ -26,7 +26,7 @@ Various monitoring aspects in an IT environment include:
    - End-user experience and satisfaction
    - Page load times
    - Transaction success rates
-3. **End-User Monitoring (EUM):**
+   **End-User Monitoring (EUM):**
    - Google Analytics
    - Pingdom
    - Dynatrace Real User Monitoring (RUM)
@@ -35,7 +35,7 @@ Various monitoring aspects in an IT environment include:
 4. **Log Monitoring:**
    - System logs (syslog, Windows Event Logs)
    - Application logs (web server, database, application-specific)
-4. **Log Monitoring:**
+   **Log Monitoring:**
    - ELK Stack (Elasticsearch, Logstash, Kibana)
    - Splunk
    - Graylog
@@ -45,7 +45,7 @@ Various monitoring aspects in an IT environment include:
    - Application performance metrics
    - Server performance metrics
    - Network performance metrics
-5. **Performance Monitoring:**
+   **Performance Monitoring:**
    - Apache JMeter
    - Gatling
    - LoadRunner
@@ -55,7 +55,7 @@ Various monitoring aspects in an IT environment include:
    - Security events and alerts
    - Intrusion detection
    - Logins and access attempts
-6. **Security Monitoring:**
+   **Security Monitoring:**
    - ArcSight
    - Splunk Enterprise Security
    - LogRhythm
@@ -65,7 +65,7 @@ Various monitoring aspects in an IT environment include:
    - Network bandwidth utilization
    - Latency and packet loss
    - Network device health (status, availability)
-7. **Network Monitoring:**
+   **Network Monitoring:**
    - PRTG Network Monitor
    - SolarWinds Network Performance Monitor (NPM)
    - Nagios Network Analyzer
@@ -75,7 +75,7 @@ Various monitoring aspects in an IT environment include:
    - Cloud resource utilization (compute, storage, networking)
    - Auto-scaling events
    - Cloud service availability
-8. **Cloud Monitoring:**
+   **Cloud Monitoring:**
    - Amazon CloudWatch
    - Google Cloud Monitoring (formerly Stackdriver)
    - Azure Monitor
@@ -85,7 +85,7 @@ Various monitoring aspects in an IT environment include:
    - Database query performance
    - Connection pool usage
    - Database locks and deadlocks
-9. **Database Monitoring:**
+   **Database Monitoring:**
    - Oracle Enterprise Manager (OEM)
    - SQL Server Management Studio (SSMS)
    - Prometheus with database exporters (e.g., mysqld_exporter)
@@ -94,7 +94,7 @@ Various monitoring aspects in an IT environment include:
     - Simulated user interactions and transactions
     - Global performance variations
     - Regional performance monitoring
-10. **Synthetic Monitoring:**
+    **Synthetic Monitoring:**
     - Pingdom
     - Uptrends
     - Site24x7
@@ -103,7 +103,7 @@ Various monitoring aspects in an IT environment include:
 11. **Container Monitoring:**
     - Resource utilization in containerized environments (e.g., Docker, Kubernetes)
     - Container health and status
-11. **Container Monitoring:**
+    **Container Monitoring:**
     - Docker Monitoring with cAdvisor
     - Kubernetes Monitoring with Prometheus Operator
     - Sysdig Monitor
@@ -112,7 +112,7 @@ Various monitoring aspects in an IT environment include:
 12. **Virtualization Monitoring:**
     - Virtual machine performance metrics
     - Hypervisor performance and resource usage
-12. **Virtualization Monitoring:**
+    **Virtualization Monitoring:**
     - VMware vRealize Operations
     - SolarWinds Virtualization Manager
     - Microsoft System Center Virtual Machine Manager (SCVMM)
@@ -120,7 +120,7 @@ Various monitoring aspects in an IT environment include:
 13. **Service-Level Agreement (SLA) Monitoring:**
     - Monitoring adherence to SLAs and uptime guarantees
     - Service availability and response times
-13. **Service-Level Agreement (SLA) Monitoring:**
+    **Service-Level Agreement (SLA) Monitoring:**
     - Freshping
     - UptimeRobot
     - Pingdom
@@ -129,7 +129,7 @@ Various monitoring aspects in an IT environment include:
 14. **Alerting and Notification:**
     - Setting up and managing alert thresholds
     - Notifying relevant teams or stakeholders of critical events
-14. **Alerting and Notification:**
+    **Alerting and Notification:**
     - PagerDuty
     - OpsGenie
     - VictorOps
@@ -138,7 +138,7 @@ Various monitoring aspects in an IT environment include:
 15. **Dashboarding and Visualization:**
     - Creating and customizing real-time dashboards
     - Data visualization for easier analysis and reporting
-15. **Dashboarding and Visualization:**
+    **Dashboarding and Visualization:**
     - Grafana
     - Kibana (part of ELK Stack)
     - Datadog Dashboard
