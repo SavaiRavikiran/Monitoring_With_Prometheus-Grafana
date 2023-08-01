@@ -1,5 +1,3 @@
-![image](https://github.com/RavikiranSavai/Monitoring_With_Prometheus-Grafana/assets/76962621/04a30fcc-7644-4aad-8b48-c779ba6b2f84)Various monitoring aspects in an IT environment include:
-
 1. **Infrastructure Monitoring:**
    - Servers (CPU, memory, disk usage, etc.)
    - Network devices (routers, switches, firewalls)
