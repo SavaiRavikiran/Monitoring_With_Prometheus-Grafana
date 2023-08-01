@@ -1,4 +1,4 @@
-Various monitoring aspects in an IT environment include:
+![image](https://github.com/RavikiranSavai/Monitoring_With_Prometheus-Grafana/assets/76962621/04a30fcc-7644-4aad-8b48-c779ba6b2f84)Various monitoring aspects in an IT environment include:
 
 1. **Infrastructure Monitoring:**
    - Servers (CPU, memory, disk usage, etc.)
@@ -154,9 +154,6 @@ Each of these tools specializes in different monitoring aspects and provides a r
 # **Prometheus: Overview and Architecture**
 
 Prometheus is an open-source monitoring and alerting system that is widely used in the DevOps and cloud-native ecosystem. It was developed by SoundCloud and later donated to the Cloud Native Computing Foundation (CNCF). Prometheus is designed to 
-![image](https://github.com/RavikiranSavai/Monitoring_With_Prometheus-Grafana/assets/76962621/2a58bc67-78be-4f8e-88b2-1f0e23d454ea)
-
-
 
 **Key Features of Prometheus:**
 1. **Multi-Dimensional Data Model:** Prometheus follows a multi-dimensional data model, where each data point is identified by a combination of key-value pairs. This allows for flexible and efficient querying and aggregation of metrics.
@@ -174,6 +171,8 @@ Prometheus is an open-source monitoring and alerting system that is widely used 
 **Prometheus Architecture:**
 
 Prometheus consists of several key components that work together to provide efficient monitoring capabilities:
+
+![image](https://github.com/RavikiranSavai/Monitoring_With_Prometheus-Grafana/assets/76962621/2a58bc67-78be-4f8e-88b2-1f0e23d454ea)
 
 1. **Prometheus Server:** The core component responsible for data collection and storage. It scrapes metrics data from configured targets using HTTP-based pull mechanism and stores the time-series data in its local time-series database.
 
