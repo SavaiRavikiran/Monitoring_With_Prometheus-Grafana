@@ -244,7 +244,13 @@ Prometheus consists of several key components that work together to provide effi
 
 ![image](https://github.com/RavikiranSavai/Monitoring_With_Prometheus-Grafana/assets/76962621/2a58bc67-78be-4f8e-88b2-1f0e23d454ea)
 
-1. **Prometheus Server:** The core component responsible for data collection and storage. It scrapes metrics data from configured targets using HTTP-based pull mechanism and stores the time-series data in its local time-series database.
+1. **Prometheus Server:** The core component responsible for data collection and storage. It scrapes metrics data from configured targets using HTTP-based pull mechanism and 
+stores the time-series data in its local time-series database. like CPU Uses, No of exceptions.
+**Second**, it has a data retrieval worker that is responsible for getting or pulling those metrics from applications, services, servers, 
+and other target resources and storing them or pushing them into that database.
+And **third**, it has a web server or server API that accepts
+ queries for that stored data, and that web server component or the server API is used to display the data in a dashboard or UI, either 
+ through Prometheus dashboard or some other data visualization tool like Grafana.
 
 2. **Pushgateway:** A service that allows ephemeral or batch jobs to push their metrics to Prometheus. This is useful for jobs that do not have long lifetimes or those that cannot be scraped directly by Prometheus.
 
