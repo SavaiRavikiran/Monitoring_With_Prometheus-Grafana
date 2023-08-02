@@ -33,6 +33,42 @@ Overall, monitoring is an essential part of IT operations. It allows organizatio
 
 Monitoring is important because it allows organizations to:
 
+So let's take a specific example. Say one specific server ran out of memory and kicked off a running container that was responsible 
+for providing database sync between two database pods in a Kubernetes cluster. That, in turn, caused those two database pods to fail. 
+That database was used by an authentication service that also stopped working because the database became unavailable, and then 
+the application that depended on that authentication service couldn't authenticate users in the UI anymore. But from a user perspective, 
+all you see is an error in the UI, can't log in.
+
+So how do you know what actually went wrong when you don't have any insight into what's going on inside the cluster? 
+You don't see that red line of the chain of events as displayed here; 
+you just see the error. 
+
+So now you start working backward from there to find the cause and fix it. So you check: 
+Is the application back and running? Does it show an exception? 
+Is the authentication service running? Did it crash? Why did it crash? 
+All the way to the initial container failure. But what will make this searching the problem process more efficient would be to 
+have a tool that constantly monitors whether services are running and alerts the maintainers as soon as one service crashes 
+so you know exactly what happened. Or even better, it identifies problems before they even occur and alerts the system administrators 
+responsible for that infrastructure to prevent that issue.
+ 
+So, for example, in this case, it would check regularly the status of memory usage on each server, and when on one of the servers, 
+it spikes over, for example, 70 percent for over an hour or keeps increasing, notify about the risk that the memory on that server might 
+soon run out. Or let's consider another scenario where suddenly you stop seeing logs for your application because Elasticsearch 
+doesn't accept any new logs because the server ran out of disk space or Elasticsearch reached the storage limit that was allocated for it.
+Again, the monitoring tool would check continuously the storage space and compare it with the Elasticsearch consumption of space of 
+storage, and it will see the risk and notify maintainers of the possible storage issue. And you can tell the monitoring tool what 
+that critical point is when the alert should be triggered. For example, if you have a very important application that absolutely 
+can't have any log data loss, you may be very strict and want to take measures as soon as 50 or 60 percent capacity is reached. 
+Or maybe you know adding more storage space will take long because it's a bureaucratic process in your organization where you need 
+approval of some IT department and several other people; then maybe you also want to be notified earlier about the possible storage issue.
+
+So, a third scenario where the application suddenly becomes too slow because one service breaks down and starts sending hundreds of 
+error messages in a loop across the network, that creates high network traffic and slows down other services too. Having a tool that 
+detects such spikes in network load plus tells you which service is responsible for causing it can give you timely alert to fix the issue.
+
+And such automated monitoring and alerting is exactly what Prometheus offers as a part of a modern DevOps workflow. 
+So how does Prometheus actually work or how does its architecture actually look like?
+
 **Identify and troubleshoot problems quickly:** Monitoring can help organizations to identify and troubleshoot problems quickly. This can help to prevent outages and to improve the overall performance of the system.
 
 **Ensuring system availability:** Monitoring can help organizations to ensure that their systems are available when they are needed. This is important for businesses that rely on their systems to operate.
@@ -224,6 +260,12 @@ Each of these tools specializes in different monitoring aspects and provides a r
 # **Prometheus: Overview and Architecture**
 
 Prometheus is an open-source monitoring and alerting system that is widely used in the DevOps and cloud-native ecosystem. It was developed by SoundCloud and later donated to the Cloud Native Computing Foundation (CNCF). Prometheus is designed to 
+
+Prometheus was created to monitor highly dynamic container environments like Kubernetes, Docker Swarm, etc. However, 
+it can also be used in a traditional non-container infrastructure where you have just bare servers with applications deployed 
+directly on it. 
+So over the past years, Prometheus has become the mainstream monitoring tool of choice in the container and 
+microservice world.
 
 **Key Features of Prometheus:**
 1. **Multi-Dimensional Data Model:** Prometheus follows a multi-dimensional data model, where each data point is identified by a combination of key-value pairs. This allows for flexible and efficient querying and aggregation of metrics.
