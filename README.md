@@ -8,9 +8,17 @@ Overall, monitoring is an essential part of IT operations. It allows organizatio
 
 # Why is Monitoring.
 
-Monitoring is important because it allows organizations to:
+Imagine having such a complex infrastructure with loads of servers distributed over many locations, 
+and you have No insight into what is happening on the hardware level or on the application level like errors, 
+response latency, hardware down, or overloaded, maybe running out of resources, etc.
 
-So let's take a specific example. Say one specific server ran out of memory and kicked off a running container that was responsible 
+In such complex infrastructure, there are more things that can go wrong. When you have tons of services and applications deployed, 
+any one of them can crash and cause failure of other services, and you only have so many moving pieces, 
+and suddenly the application becomes unavailable to users. You must quickly identify what exactly out of this 100s different 
+things went wrong, and that could be difficult and time-consuming when debugging the system manually.
+
+1.
+So let's take a specific example. Say one specific **server ran out of memory** and kicked off a running container that was responsible 
 for providing database sync between two database pods in a Kubernetes cluster. That, in turn, caused those two database pods to fail. 
 That database was used by an authentication service that also stopped working because the database became unavailable, and then 
 the application that depended on that authentication service couldn't authenticate users in the UI anymore. But from a user perspective, 
@@ -228,16 +236,11 @@ Overall, monitoring is an essential part of IT operations. It allows organizatio
 
 Each of these monitoring aspects provides unique insights into the health and performance of different components of the IT infrastructure and applications. By monitoring these aspects, organizations can ensure optimal performance, detect and resolve issues proactively, and provide a seamless experience to end-users.
 
-Certainly! Here's an expanded list with monitoring tools associated with various monitoring aspects:
-
-
-Each of these tools specializes in different monitoring aspects and provides a range of features for visualization, alerting, and analysis, empowering DevOps and IT teams to effectively manage and optimize their systems and applications.
-
 # **Prometheus: Overview and Architecture**
 
 Prometheus is an open-source monitoring and alerting system that is widely used in the DevOps and cloud-native ecosystem. It was developed by SoundCloud and later donated to the Cloud Native Computing Foundation (CNCF). Prometheus is designed to 
 
-Prometheus was created to monitor highly dynamic container environments like Kubernetes, Docker Swarm, etc. However, 
+Prometheus was created to **monitor highly dynamic container environments** like Kubernetes, Docker Swarm, etc. However, 
 it can also be used in a traditional non-container infrastructure where you have just bare servers with applications deployed 
 directly on it. 
 So over the past years, Prometheus has become the mainstream monitoring tool of choice in the container and 
@@ -256,17 +259,15 @@ microservice world.
 
 6. **Alerting:** Prometheus comes with a built-in alerting mechanism that allows users to define alerting rules based on metrics thresholds or other conditions. When an alert rule is violated, Prometheus can send alerts to various alerting channels like email, Slack, or PagerDuty.
 
-**Prometheus Architecture:**
+# **Prometheus Architecture:**
 
 Prometheus consists of several key components that work together to provide efficient monitoring capabilities:
 
 ![image](https://github.com/RavikiranSavai/Monitoring_With_Prometheus-Grafana/assets/76962621/2a58bc67-78be-4f8e-88b2-1f0e23d454ea)
 
-1. **Prometheus Server:** The core component responsible for data collection and storage. It scrapes metrics data from configured targets using HTTP-based pull mechanism and 
+1. **Prometheus Server:** The core component responsible for data collection and storage. It scrapes metrics data from configured targets using HTTP-based pull mechanism and stores the time-series data in its local **time-series database**. like CPU Uses, No of exceptions.
 
-stores the time-series data in its local time-series database. like CPU Uses, No of exceptions.
-
-**Second**, it has a data retrieval worker that is responsible for getting or pulling those metrics from applications, services, servers, 
+**Second**, it has a **data retrieval worker** that is responsible for getting or pulling those metrics from applications, services, servers, 
 and other target resources and storing them or pushing them into that database.
 
 And **third**, it has a web server or server API that accepts
