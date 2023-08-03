@@ -1,29 +1,32 @@
 # Monitoring.
 # Index
 
-1. [What is Prometheus?](#what-is-prometheus)
-2. [Where and why is Prometheus used?](#where-and-why-is-prometheus-used)
-3. [Specific Use Cases for using Prometheus Monitoring](#specific-use-cases-for-using-prometheus-monitoring)
-4. [How does Prometheus work?](#how-does-prometheus-work)
-5. [Prometheus Architecture, Prometheus Server](#prometheus-architecture-prometheus-server)
-6. [What is Targets and Metrics?](#what-is-targets-and-metrics)
-7. [How does Prometheus collect those metrics from targets?](#how-does-prometheus-collect-those-metrics-from-targets)
-8. [What is Target Endpoints and Exporters?](#what-is-target-endpoints-and-exporters)
-9. [How to Monitoring your own application?](#how-to-monitoring-your-own-application)
-10. [Pull Mechanism - Unique advantage of Prometheus](#pull-mechanism---unique-advantage-of-prometheus)
-11. [Pushgateway for short-lived jobs](#pushgateway-for-short-lived-jobs)
-12. [Configuring Prometheus - Example YAML Configuration](#configuring-prometheus---example-yaml-configuration)
-13. [Alert Manager - Triggering alerts](#alert-manager---triggering-alerts)
-14. [Prometheus Data Storage - Where does Prometheus store the data?](#prometheus-data-storage---where-does-prometheus-store-the-data)
-15. [PromQL Query Language](#promql-query-language)
-16. [Grafana](#grafana)
+1. [What is Monitoring?](#what-is-monitoring)
+2. [Why is Monitoring Important?](#why-is-monitoring)
+3. [Various Monitoring Aspects](#various-monitoring-aspects)
+4. [What is Prometheus?](#what-is-prometheus)
+5. [Where and Why is Prometheus Used?](#where-and-why-is-prometheus-used)
+6. [Specific Use Cases for Using Prometheus Monitoring](#specific-use-cases-for-using-prometheus-monitoring)
+7. [How does Prometheus Work?](#how-does-prometheus-work)
+8. [Prometheus Architecture Explained](#prometheus-architecture-explained)
+9. [Prometheus Server](#prometheus-server)
+10. [What are Targets and Metrics?](#what-are-targets-and-metrics)
+11. [How does Prometheus Collect Metrics from Targets?](#how-does-prometheus-collect-metrics-from-targets)
+12. [What are Target Endpoints and Exporters?](#what-are-target-endpoints-and-exporters)
+13. [How to Monitor Your Own Application?](#how-to-monitor-your-own-application)
+14. [Pull Mechanism - Unique Advantage of Prometheus](#pull-mechanism---unique-advantage-of-prometheus)
+15. [Pushgateway for Short-lived Jobs](#pushgateway-for-short-lived-jobs)
+16. [Configuring Prometheus - Example YAML Configuration](#configuring-prometheus---example-yaml-configuration)
+17. [Alert Manager - Triggering Alerts](#alert-manager---triggering-alerts)
+18. [Prometheus Data Storage - Where Does Prometheus Store the Data?](#prometheus-data-storage---where-does-prometheus-store-the-data)
+19. [PromQL Query Language](#promql-query-language)
+20. [Key Characteristics - Advantages and Disadvantages of Prometheus](#key-characteristics---advantages-and-disadvantages-of-prometheus)
+21. [Prometheus Monitoring with Docker and Kubernetes](#prometheus-monitoring-with-docker-and-kubernetes)
+22. [Grafana ](#Grafana)
 
-
+## what-is-monitoring
 
 **Monitoring is the process of collecting and analyzing data about a system in order to identify and troubleshoot problems. It is an essential part of IT operations, as it allows organizations to ensure that their systems are running smoothly and efficiently.**
-
-Overall, monitoring is an essential part of IT operations. It allows organizations to ensure that their systems are running smoothly and efficiently, and it helps to identify and troubleshoot problems quickly.
-
 
 
 # Why is Monitoring.
