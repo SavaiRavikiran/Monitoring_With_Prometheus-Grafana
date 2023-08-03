@@ -1,8 +1,8 @@
 # Monitoring.
 # Index
 
-1. [What is Monitoring?](#what-is-monitoring)
-2. [Why is Monitoring Important?](#why-is-monitoring)
+1. [What is Monitoring?](#What-is-Monitoring)
+2. [Why is Monitoring Important?](#Why-is-Monitoring)
 3. [Various Monitoring Aspects](#various-monitoring-aspects)
 4. [What is Prometheus?](#what-is-prometheus)
 5. [Where and Why is Prometheus Used?](#where-and-why-is-prometheus-used)
@@ -24,7 +24,7 @@
 21. [Prometheus Monitoring with Docker and Kubernetes](#prometheus-monitoring-with-docker-and-kubernetes)
 22. [Grafana ](#Grafana)
 
-## what-is-monitoring
+# What-is-Monitoring
 
 **Monitoring is the process of collecting and analyzing data about a system in order to identify and troubleshoot problems. It is an essential part of IT operations, as it allows organizations to ensure that their systems are running smoothly and efficiently.**
 
