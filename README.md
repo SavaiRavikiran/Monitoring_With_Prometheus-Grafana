@@ -258,6 +258,8 @@ Each of these monitoring aspects provides unique insights into the health and pe
 
 # **Prometheus: Overview and Architecture**
 
+## What is Prometheus?
+
 Prometheus is an open-source monitoring and alerting system that is widely used in the DevOps and cloud-native ecosystem. It was developed by SoundCloud and later donated to the Cloud Native Computing Foundation (CNCF). Prometheus is designed to 
 
 Prometheus was created to **monitor highly dynamic container environments** like Kubernetes, Docker Swarm, etc. However, 
