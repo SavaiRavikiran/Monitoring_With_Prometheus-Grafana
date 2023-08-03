@@ -26,58 +26,10 @@
 
 # What-is-Monitoring
 
-**Monitoring is the process of collecting and analyzing data about a system in order to identify and troubleshoot problems. It is an essential part of IT operations, as it allows organizations to ensure that their systems are running smoothly and efficiently.**
+Monitoring is the process of **collecting** and **analyzing** data about a system in order to identify and troubleshoot problems. It is an essential part of IT operations, as it allows organizations to ensure that their systems are running **smoothly** and **efficiently**.
 
 
 # Why is Monitoring.
-
-Imagine having such a complex infrastructure with loads of servers distributed over many locations, 
-and you have No insight into what is happening on the hardware level or on the application level like errors, 
-response latency, hardware down, or overloaded, maybe running out of resources, etc.
-
-In such complex infrastructure, there are more things that can go wrong. When you have tons of services and applications deployed, 
-any one of them can crash and cause failure of other services, and you only have so many moving pieces, 
-and suddenly the application becomes unavailable to users. You must quickly identify what exactly out of this 100s different 
-things went wrong, and that could be difficult and time-consuming when debugging the system manually.
-
-1.
-So let's take a specific example. Say one specific **server ran out of memory** and kicked off a running container that was responsible 
-for providing database sync between two database pods in a Kubernetes cluster. That, in turn, caused those two database pods to fail. 
-That database was used by an authentication service that also stopped working because the database became unavailable, and then 
-the application that depended on that authentication service couldn't authenticate users in the UI anymore. But from a user perspective, 
-all you see is an error in the UI, can't log in.
-
-So how do you know what actually went wrong when you don't have any insight into what's going on inside the cluster? 
-You don't see that red line of the chain of events as displayed here; 
-you just see the error. 
-
-So now you start working backward from there to find the cause and fix it. So you check: 
-Is the application back and running? Does it show an exception? 
-Is the authentication service running? Did it crash? Why did it crash? 
-All the way to the initial container failure. But what will make this searching the problem process more efficient would be to 
-have a tool that constantly monitors whether services are running and alerts the maintainers as soon as one service crashes 
-so you know exactly what happened. Or even better, it identifies problems before they even occur and alerts the system administrators 
-responsible for that infrastructure to prevent that issue.
- 
-So, for example, in this case, it would check regularly the status of memory usage on each server, and when on one of the servers, 
-it spikes over, for example, 70 percent for over an hour or keeps increasing, notify about the risk that the memory on that server might 
-soon run out. Or let's consider another scenario where suddenly you stop seeing logs for your application because Elasticsearch 
-doesn't accept any new logs because the server ran out of disk space or Elasticsearch reached the storage limit that was allocated for it.
-Again, the monitoring tool would check continuously the storage space and compare it with the Elasticsearch consumption of space of 
-storage, and it will see the risk and notify maintainers of the possible storage issue. And you can tell the monitoring tool what 
-that critical point is when the alert should be triggered. For example, if you have a very important application that absolutely 
-can't have any log data loss, you may be very strict and want to take measures as soon as 50 or 60 percent capacity is reached. 
-Or maybe you know adding more storage space will take long because it's a bureaucratic process in your organization where you need 
-approval of some IT department and several other people; then maybe you also want to be notified earlier about the possible storage issue.
-
-So, a third scenario where the **application suddenly becomes too slow because** one service breaks down and starts sending hundreds of 
-error messages in a loop across the network, that creates high network traffic and slows down other services too. Having a tool that 
-detects such spikes in network load plus tells you which service is responsible for causing it can give you timely alert to fix the issue.
-
-And such automated monitoring and alerting is exactly what Prometheus offers as a part of a modern DevOps workflow. 
-So how does Prometheus actually work or how does its architecture actually look like?
-
-## **The benefits of monitoring include:**
 
 **Identifying and troubleshooting problems:** Monitoring can help organizations to identify and troubleshoot problems quickly. This can help to prevent outages and to improve the overall performance of the system.
 
@@ -89,7 +41,7 @@ So how does Prometheus actually work or how does its architecture actually look 
 
 Overall, monitoring is an essential part of IT operations. It allows organizations to ensure that their systems are running smoothly and efficiently, and it helps to identify and troubleshoot problems quickly.
 
-**Here are some of the benefits of monitoring:**
+##  **Here are some of the benefits of monitoring:**
 
 **Prevention:** Monitoring can help to prevent problems from occurring by identifying potential issues before they cause an outage or other disruption.
 
@@ -99,7 +51,7 @@ Overall, monitoring is an essential part of IT operations. It allows organizatio
 
 **Cost savings:** Monitoring can help to save money by preventing outages and other disruptions that can lead to lost revenue.
 
-The challenges of monitoring include:
+## The challenges of monitoring include:
 
 **Data collection:** Collecting data can be a challenge, especially for large systems.
 
@@ -111,7 +63,7 @@ The challenges of monitoring include:
 
 Overall, monitoring is an essential part of IT operations. It allows organizations to ensure that their systems are running smoothly and efficiently, and it helps to identify and troubleshoot problems quickly.
 
-# Various monitoring aspects in an IT environment include:
+## Various Monitoring Aspects
 
 1. **Infrastructure Monitoring:**
    - Servers (CPU, memory, disk usage, etc.)
