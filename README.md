@@ -1,4 +1,4 @@
-# What is Monitoring.
+# Monitoring.
 # Index
 
 1. [What is Prometheus?](#what-is-prometheus)
