@@ -8,10 +8,39 @@ The ElasticSearch exporter collects metrics from an ElasticSearch cluster and ex
 ## Architecture
 The ElasticSearch exporter runs as a standalone application that queries the ElasticSearch cluster and exposes the metrics in a format that Prometheus can scrape.
 
+# Monitoring Stack Diagram
+
 ```mermaid
 graph LR
-  E[ElasticSearch Cluster]-->|Query Metrics| F(ElasticSearch Exporter)
-  G[Prometheus]-->|Scrape Metrics| F
+  B --> PM(Pod Monitor)
+  PM --> F(Prerequisite exporter)
+  F -->|DaemonSet| Worker[[Workers]]
+  C -->|DaemonSet| Worker
+
+  subgraph "Kube-prometheus-stack"
+    A[Grafana]-->|Read metrics| B[(Prometheus)]
+    B --> C(Node Exporter)
+    B -->|Push alerts| G[Alertmanager]
+    B --> D(Blackbox exporter)
+    B --> SM1(Service Monitor)
+    B --> E(Statsd exporter)
+    E[ElasticSearch Cluster]-->|Query Metrics| F(ElasticSearch Exporter)
+    G[Prometheus]-->|Scrape Metrics| F
+  end
+
+  B --> SM2(Service Monitor)
+  SM2 --> O[Third party Components]
+  SM1 --> P[Kubernetes Components]
+  G -->|Notify receivers| H>mail devops_team]
+  G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
+  G -->|Notify receivers| J>mail middleware_team]
+  D -->|probe| L[APPS URL]
+  D -->|probe| M[Components URL]
+
+  subgraph "Cloudbees"
+    N(Statsd server) --> K[Cloudbees]
+    E --> N
+  end
 ```
 
 ## Deployment
