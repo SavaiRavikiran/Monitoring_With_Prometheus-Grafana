@@ -1,3 +1,47 @@
+# Monitoring Stack Diagram
+
+```mermaid
+graph TD
+  subgraph "Kube-prometheus-stack"
+    A[Grafana]-->|Read metrics| B[(Prometheus)]
+    B --> C(Node Exporter)
+    B -->|Push alerts| G[Alertmanager]
+    B --> D(Blackbox exporter)
+    B --> SM1(Service Monitor)
+    B --> E(Statsd exporter)
+    B --> F(ElasticSearch Exporter)
+    E1[ElasticSearch Cluster]-->|Connects to| F
+    F -->|Scrapes Data| E1
+    F -->|Transforms & Exposes Metrics| F2[/metrics endpoint/]
+    B -->|Scrapes Data| F2
+  end
+
+  B --> SM2(Service Monitor)
+  SM2 --> O[Third party Components]
+  SM1 --> P[Kubernetes Components]
+  G -->|Notify receivers| H>mail devops_team]
+  G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
+  G -->|Notify receivers| J>mail middleware_team]
+  D -->|probe| L[APPS URL]
+  D -->|probe| M[Components URL]
+
+  subgraph "Cloudbees"
+    N(Statsd server) --> K[Cloudbees]
+    E --> N
+  end
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ```mermaid
 graph TD
   subgraph "Kube-prometheus-stack"
