@@ -13,7 +13,6 @@ graph TD
   E1[ElasticSearch Cluster]-->|Connects to| F
   F -->|Scrapes Data| E1
   F -->|Transforms & Exposes Metrics| F2[/metrics endpoint/]
-  B -->|Scrapes Data| F2
   B --> SM2(Service Monitor)
   SM2 --> O[Third party Components]
   SM1 --> P[Kubernetes Components]
