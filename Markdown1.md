@@ -1,3 +1,108 @@
+```mermaid
+graph TD
+  subgraph "Kube-prometheus-stack"
+    A[Grafana]-->|Read metrics| B[(Prometheus)]
+    B --> C(Node Exporter)
+    B --> D(Blackbox exporter)
+    B --> E(Statsd exporter)
+    B --> G[Alertmanager]
+    B --> SM1(Service Monitor)
+    B --> F(ElasticSearch Exporter)
+  end
+  
+  E1[ElasticSearch Cluster]-->|Connects to| F
+  F -->|Scrapes Data| E1
+  F -->|Transforms & Exposes Metrics| F2[/metrics endpoint/]
+  B -->|Scrapes Data| F2
+  B --> SM2(Service Monitor)
+  SM2 --> O[Third party Components]
+  SM1 --> P[Kubernetes Components]
+  
+  G -->|Notify receivers| H>mail devops_team]
+  G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
+  G -->|Notify receivers| J>mail
+```
+```mermaid
+graph TD
+  subgraph "Kube-prometheus-stack"
+    A[Grafana]-->|Read metrics| B[(Prometheus)]
+    B --> C(Node Exporter)
+    B --> D(Blackbox exporter)
+    B --> E(Statsd exporter)
+    B --> G[Alertmanager]
+    B --> SM1(Service Monitor)
+    B --> F(ElasticSearch Exporter)
+  end
+  
+  E1[ElasticSearch Cluster]-->|Connects to| F
+  F -->|Scrapes Data| E1
+  F -->|Transforms & Exposes Metrics| F2[/metrics endpoint/]
+  B -->|Scrapes Data| F2
+  B --> SM2(Service Monitor)
+  SM2 --> O[Third party Components]
+  SM1 --> P[Kubernetes Components]
+  
+  G -->|Notify receivers| H>mail devops_team]
+  G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
+  G -->|Notify receivers| J>mail middleware_team]
+  D -->|probe| L[APPS URL]
+  D -->|probe| M[Components URL]
+
+  subgraph "Cloudbees"
+    E --> N(Statsd server)
+    N --> K[Cloudbees]
+  end
+```
+
+
+
+
+
+
+
+
+
+
+### Rendered Diagram (in Mermaid.js format)
+
+```mermaid
+graph TD
+  subgraph "Kube-prometheus-stack"
+    A[Grafana]-->|Read metrics| B[(Prometheus)]
+    B -->|Scrapes Data| F2[/metrics endpoint/]
+    F2 --> F(ElasticSearch Exporter)
+    F -->|Scrapes Data| E1[ElasticSearch Cluster]
+    B --> C(Node Exporter)
+    B --> D(Blackbox exporter)
+    B --> E(Statsd exporter)
+    B --> G[Alertmanager]
+    B --> SM1(Service Monitor)
+  end
+
+  B --> SM2(Service Monitor)
+  SM2 --> O[Third party Components]
+  SM1 --> P[Kubernetes Components]
+  
+  G -->|Notify receivers| H>mail devops_team]
+  G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
+  G -->|Notify receivers| J>mail middleware_team]
+  
+  D -->|probe| L[APPS URL]
+  D -->|probe| M[Components URL]
+
+  subgraph "Cloudbees"
+    E --> N(Statsd server)
+    N --> K[Cloudbees]
+  end
+```
+
+
+
+
+
+
+
+
 
 ### Rendered Diagram (in Mermaid.js format)
 
