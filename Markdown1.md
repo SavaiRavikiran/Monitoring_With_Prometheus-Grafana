@@ -16,6 +16,25 @@ graph LR
   end
 ```
 
+```mermaid
+graph LR
+  A[ElasticSearch Cluster] -->|Crawls Metrics (Bidirectional)| B[ElasticSearch Exporter]
+  B -->|Exposes Metrics (Endpoint)| B2
+  C[Prometheus] -->|Scrapes Metrics| B2
+  C -->|Stores Metrics (Time-Series DB)| D[Prometheus Storage]
+  E[Grafana] -->|Queries Metrics| C
+  E -->|Creates Dashboards & Alerts| E2
+
+  subgraph "Data Flow"
+    A --> B
+    B --> B2
+    C --> B2
+    C --> D
+    E --> C
+  end
+```
+
+
 
 ```mermaid
 graph LR
