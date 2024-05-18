@@ -10,7 +10,7 @@ graph TD
     B --> F(ElasticSearch Exporter)
   end
 
-  E1[ElasticSearch Cluster]-->|Connects to| F
+  E[ElasticSearch Cluster]-->|Connects to| F
   B --> SM2(Service Monitor)
   SM2 --> O[Third party Components]
   SM1 --> P[Kubernetes Components]
