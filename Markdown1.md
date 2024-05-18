@@ -157,3 +157,117 @@ graph LR
   end
   
   ESE --> ES[ElasticSearch Cluster]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's a revised version of your mermaid graph with correct technical placements of the ElasticSearch components within the "Kube-prometheus-stack" subgraph. This shows how the ElasticSearch cluster interacts with the ElasticSearch exporter and how Prometheus scrapes metrics from it, including the complete structure of the monitoring stack:
+
+```markdown
+# Monitoring Stack Diagram
+
+```mermaid
+graph LR
+  B --> PM(Pod Monitor)
+  PM --> F(Prerequisite exporter)
+  F -->|DaemonSet| Worker[[Workers]]
+  C -->|DaemonSet| Worker
+
+  subgraph "Kube-prometheus-stack"
+    A[Grafana]-->|Read metrics| B[(Prometheus)]
+    B --> C(Node Exporter)
+    B -->|Push alerts| G[Alertmanager]
+    B --> D(Blackbox exporter)
+    B --> SM1(Service Monitor)
+    B --> E(Statsd exporter)
+    B --> F(ElasticSearch Exporter)
+    E[ElasticSearch Cluster]-->|Query Metrics| F
+    B --> F
+  end
+
+  B --> SM2(Service Monitor)
+  SM2 --> O[Third party Components]
+  SM1 --> P[Kubernetes Components]
+  G -->|Notify receivers| H>mail devops_team]
+  G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
+  G -->|Notify receivers| J>mail middleware_team]
+  D -->|probe| L[APPS URL]
+  D -->|probe| M[Components URL]
+
+  subgraph "Cloudbees"
+    N(Statsd server) --> K[Cloudbees]
+    E --> N
+  end
+```
+
+### Explanation of the Diagram:
+
+- **Kube-prometheus-stack**:
+  - **Grafana** reads metrics from **Prometheus**.
+  - **Prometheus** collects metrics from:
+    - **Node Exporter** (via DaemonSet)
+    - **Prerequisite Exporter** (via DaemonSet)
+    - **Blackbox Exporter**
+    - **Statsd Exporter**
+    - **ElasticSearch Exporter**
+  - **ElasticSearch Cluster** sends metrics to the **ElasticSearch Exporter**.
+  - **Prometheus** scrapes metrics from the **ElasticSearch Exporter**.
+  - **Prometheus** uses **Pod Monitor** and **Service Monitors** to scrape metrics from Kubernetes and third-party components.
+  - **Prometheus** sends alerts to **Alertmanager**.
+  - **Alertmanager** notifies various receivers via email.
+  - **Blackbox Exporter** probes application URLs and component URLs.
+
+- **Cloudbees**:
+  - **Statsd Server** within Cloudbees sends metrics to **Cloudbees**.
+  - **Statsd Exporter** sends metrics to **Statsd Server**.
+
+When you include this code in a Markdown file and view it in a mermaid.js-compatible viewer, it should render the updated and technically correct diagram. Here is the complete Markdown file content:
+
+
+# Monitoring Stack Diagram
+
+```mermaid
+graph LR
+  B --> PM(Pod Monitor)
+  PM --> F(Prerequisite exporter)
+  F -->|DaemonSet| Worker[[Workers]]
+  C -->|DaemonSet| Worker
+
+  subgraph "Kube-prometheus-stack"
+    A[Grafana]-->|Read metrics| B[(Prometheus)]
+    B --> C(Node Exporter)
+    B -->|Push alerts| G[Alertmanager]
+    B --> D(Blackbox exporter)
+    B --> SM1(Service Monitor)
+    B --> E(Statsd exporter)
+    B --> F(ElasticSearch Exporter)
+    E[ElasticSearch Cluster]-->|Query Metrics| F
+    B --> F
+  end
+
+  B --> SM2(Service Monitor)
+  SM2 --> O[Third party Components]
+  SM1 --> P[Kubernetes Components]
+  G -->|Notify receivers| H>mail devops_team]
+  G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
+  G -->|Notify receivers| J>mail middleware_team]
+  D -->|probe| L[APPS URL]
+  D -->|probe| M[Components URL]
+
+  subgraph "Cloudbees"
+    N(Statsd server) --> K[Cloudbees]
+    E --> N
+  end
+```
+
+This should provide a clear and accurate depiction of your monitoring stack including the ElasticSearch components.
