@@ -21,7 +21,9 @@ graph TD
   G -->|Notify receivers| H>mail devops_team]
   G -->|Notify receivers| I>mail DS_SUPPORT_ORG_GBL]
   G -->|Notify receivers| J>mail
+  end
 ```
+
 ```mermaid
 graph TD
   subgraph "Kube-prometheus-stack"
