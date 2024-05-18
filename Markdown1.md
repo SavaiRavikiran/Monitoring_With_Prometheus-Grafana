@@ -1,3 +1,30 @@
+
+```mermaid
+graph LR
+  subgraph "Exporting data to ElasticSearch"
+    A[Monitoring System (Prometheus, Grafana Agent etc.)] --> B[Metrics]
+    B --> C[Elasticsearch Exporter]
+    C --> D[Elasticsearch Cluster]
+  end
+  
+  subgraph "Additional Data Sources"
+    E[Statsd server] --> F[Statsd exporter]
+    F --> B
+  end
+  
+  subgraph "Alerting"
+    B --> G[Alertmanager]
+    G --> H[Notify DevOps Team]
+    G --> I[Notify DS_SUPPORT_ORG_GBL]
+    G --> J[Notify Middleware Team]
+  end
+  
+  subgraph "Probes (Optional)"
+    B --> K[Blackbox exporter]
+    K --> L[External Applications (URLs)]
+  end
+```
+
 ```mermaid
 graph TD
   subgraph "Kube-prometheus-stack"
@@ -10,7 +37,7 @@ graph TD
     B --> F(ElasticSearch Exporter)
   end
 
-  E[ElasticSearch Cluster]-->|Connects to| F
+  E1[ElasticSearch Cluster]-->|Connects to| F
   B --> SM2(Service Monitor)
   SM2 --> O[Third party Components]
   SM1 --> P[Kubernetes Components]
