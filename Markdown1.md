@@ -1,5 +1,13 @@
 ```mermaid
 graph LR
+  G[Grafana]-->|query and visualize| P(Prometheus)
+  P -->|pull| F(ElasticSearch Exporter)
+  F -->|crawl & expose| E[ElasticSearch Cluster]
+```
+
+
+```mermaid
+graph LR
   E[ElasticSearch Cluster]-->|crawl & expose| F(ElasticSearch Exporter)
   F -->|pull| P(Prometheus)
   P -->|query and visualize| G[Grafana]
