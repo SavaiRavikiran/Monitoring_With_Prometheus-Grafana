@@ -10,8 +10,6 @@ graph TD
     B --> EE1(ElasticSearch Exporter)
   end
   
-  E1[ElasticSearch Cluster]-->|crawl & expose| F
-  F -->|pull| B
   B --> SM2(Service Monitor)
   B --> EE2(ElasticSearch Cluster)
   SM2 --> O[Third party Components]
@@ -23,6 +21,7 @@ graph TD
   D -->|probe| L[APPS URL]
   D -->|probe| M[Components URL]
   F -->|probe| L[APPS URL]
+  EE1 -->|Crawl & expose and pull| H[ElasticSearch Cluster]
 
   subgraph "Cloudbees"
     E --> N(Statsd server)
