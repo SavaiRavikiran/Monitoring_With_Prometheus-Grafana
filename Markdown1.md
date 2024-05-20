@@ -22,7 +22,6 @@ graph TD
   D -->|probe| L[APPS URL]
   D -->|probe| M[Components URL]
   F -->|probe| L[APPS URL]
-  EE1 -->|Crawl & expose and pull| H[ElasticSearch Cluster]
 
   subgraph "Cloudbees"
     E --> N(Statsd server)
