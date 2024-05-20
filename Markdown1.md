@@ -7,12 +7,13 @@ graph TD
     B --> E(Statsd exporter)
     B --> G[Alertmanager]
     B --> SM1(Service Monitor)
-    B --> F(ElasticSearch Exporter)
+    B --> EE1(ElasticSearch Exporter)
   end
   
   E1[ElasticSearch Cluster]-->|crawl & expose| F
   F -->|pull| B
   B --> SM2(Service Monitor)
+  B --> EE2(ElasticSearch Cluster)
   SM2 --> O[Third party Components]
   SM1 --> P[Kubernetes Components]
   
@@ -21,6 +22,7 @@ graph TD
   G -->|Notify receivers| J[mail middleware_team]
   D -->|probe| L[APPS URL]
   D -->|probe| M[Components URL]
+  F -->|probe| L[APPS URL]
 
   subgraph "Cloudbees"
     E --> N(Statsd server)
