@@ -14,7 +14,8 @@ graph TD
   B --> EE2(ElasticSearch Cluster)
   SM2 --> O[Third party Components]
   SM1 --> P[Kubernetes Components]
-  
+  EE1 -->|Crawl & expose and pull| R[ElasticSearch Cluster]
+
   G -->|Notify receivers| H[mail devops_team]
   G -->|Notify receivers| I[mail DS_SUPPORT_ORG_GBL]
   G -->|Notify receivers| J[mail middleware_team]
