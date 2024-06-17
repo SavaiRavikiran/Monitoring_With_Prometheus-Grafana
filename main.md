@@ -258,7 +258,7 @@ I could fix it by adding a newline at line 1 of my `PROMETHEUS_ELASTICSEARCH_EXP
 prometheus-elasticsearch-exporter:
 
   es:
-    uri: "http://elastic:0jVEX+Cztz-HeZR4O@elasticsearch-master.isdt-sbxelastic.svc.cluster.local:9200"
+    uri: "http://user:password@elasticsearch-master.isdt-sbxelastic.svc.cluster.local:9200"
     all: true
     indices: true
     indices_settings: true
