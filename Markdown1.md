@@ -23,20 +23,6 @@ graph TD;
   end;
 ```
 
-In this updated code:
-- `style graph_container stroke:transparent, stroke-width:0px;` sets the `graph_container` to have an invisible (`transparent`) stroke and a width of `0px`, effectively making it invisible while keeping the inner elements styled with their respective borders.
-
-Now, the inner elements (`A`, `B`, `C`, `D`, `E`) will have visible borders according to their defined styles, while the outer container (`graph_container`) remains invisible.
-
-
-
-
-
-
-
-
-
-
 Thank you for providing the correct flow. Based on your description, here is the updated mermaid diagram:
 
 ```mermaid
