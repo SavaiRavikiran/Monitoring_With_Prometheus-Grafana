@@ -31,7 +31,6 @@ graph TD
   E -->|Linked to| B
 ```
 
-
 ```mermaid
 graph TD
   style A fill:#fff,stroke:#f9f,stroke-width:4px,stroke-dasharray: 5, 5
