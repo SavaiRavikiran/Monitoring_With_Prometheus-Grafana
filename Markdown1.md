@@ -6,6 +6,21 @@ graph TD
   style D fill:#fff,stroke:#9ff,stroke-width:4px,stroke-dasharray: 5, 5
   style E fill:#fff,stroke:#f99,stroke-width:4px,stroke-dasharray: 5, 5
   
+  A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the structure of environments (app / isdt), instances (sbx, dev, devint, qa, prod) and worker nodes"] -->|Linked to| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the versions of all infrastructure and platform components"]
+  C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the list of all available components"] -->|Linked to| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the stacks and the components for each stack"]
+  D -->|Linked to| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define all platform environments (apps or isdt), the stacks and the release used by each environment"]
+  E -->|Linked to| B
+```
+
+
+```mermaid
+graph TD
+  style A fill:#fff,stroke:#f9f,stroke-width:4px,stroke-dasharray: 5, 5
+  style B fill:#fff,stroke:#9f9,stroke-width:4px,stroke-dasharray: 5, 5
+  style C fill:#fff,stroke:#ff9,stroke-width:4px,stroke-dasharray: 5, 5
+  style D fill:#fff,stroke:#9ff,stroke-width:4px,stroke-dasharray: 5, 5
+  style E fill:#fff,stroke:#f99,stroke-width:4px,stroke-dasharray: 5, 5
+  
   A["Internal_infrastructure<br/>define the structure of environments (app / isdt), instances (sbx, dev, devint, qa, prod) and worker nodes"] -->|Linked to| B["Internal_release<br/>define the versions of all infrastructure and platform components"]
   C["Internal_components<br/>define the list of all available components"] -->|Linked to| D["Internal_stacks<br/>define the stacks and the components for each stack"]
   D -->|Linked to| E["Internal_platform<br/>define all platform environments (apps or isdt), the stacks and the release used by each environment"]
