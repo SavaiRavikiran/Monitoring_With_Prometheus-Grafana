@@ -1,24 +1,34 @@
+It seems like there might be an issue with rendering the Mermaid diagram due to the way the code is structured or possibly due to a formatting error. Let's ensure the Mermaid syntax is correct and properly formatted.
+
+Here's a simplified and corrected version of your Mermaid diagram code, ensuring it adheres to the correct syntax and styling:
+
 ```mermaid
 graph TD;
-  subgraph
-    style graph_container fill:transparent, stroke:#ffcccc, stroke-width:3px, stroke-dasharray: 0;
-    
-    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+
+subgraph
+  style graph_container fill:transparent, stroke:#ffcccc, stroke-width:3px, stroke-dasharray: 0;
   
-    A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
-    B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
-    D -->|stacks| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
-    E -->|Release to use| B;
-    C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
-  end;
+  style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+
+  A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+  B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+  D -->|stacks| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+  E -->|Release to use| B;
+  C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
+end;
 ```
 
-Certainly! If you prefer a lighter color for the outer border of the `graph_container` in your Mermaid diagram, you can adjust the `stroke` color to a lighter shade. Here's how you can modify the code to use a light color for the outer border:
+### Explanation:
+- The `subgraph` keyword is used without specifying a label. This avoids displaying any text associated with the subgraph in the diagram.
+- Styles (`style graph_container ...`) define the fill color (`transparent`), stroke color (`#ffcccc`), stroke width (`3px`), and stroke dash array (`0`), ensuring the outer border is visible but the text label is hidden.
+- Each node (`A`, `B`, `C`, `D`, `E`) is styled with its respective fill color, stroke color, and other attributes.
+- Connections (`-->`) between nodes define the flow of the diagram.
 
+This corrected structure should help resolve the rendering issue and allow the Mermaid diagram to display correctly without errors. Make sure to test this updated code in your preferred Mermaid editor or environment to verify the rendering.
 ```mermaid
 graph TD;
   subgraph graph_container
