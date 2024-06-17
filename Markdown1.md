@@ -1,15 +1,16 @@
-To make the outer border colorful and bold in the mermaid diagram, you can apply the `stroke` and `stroke-width` properties to the `graph_container` style. Here's how you can modify the code:
+Thank you for providing the correct flow. Based on your description, here is the updated mermaid diagram:
+
 ```mermaid
 graph TD;
 
-  subgraph "Internals files"
+  subgraph graph_container
     style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
-    style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style B fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style C fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style D fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style E fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
   
     A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
     B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
@@ -17,15 +18,10 @@ graph TD;
     E -->|Release to use| B;
     C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
     
-    style graph_container stroke:#f00, stroke-width:3px; /* Adjust color and width for outer border */
-    
   end;
 ```
 
-In this updated code:
-- `style graph_container stroke:#f00, stroke-width:3px;` sets the outer border (`graph_container`) to have a red (`#f00`) color and a width of 3 pixels (`3px`).
-
-You can adjust `#f00` to any other valid color code or name, and adjust `3px` to any desired border width, to achieve the colorful and bold outer border effect you want.
+This diagram correctly represents the flow you described, with each component pointing to the appropriate next step in the sequence.
 
 
 ```mermaid
