@@ -1,9 +1,9 @@
-To make the outer border of the `graph_container` visible, colorful, and bold in your Mermaid diagram, you need to adjust the `stroke` and `stroke-width` properties for the `graph_container` style. Here’s how you can modify your existing Mermaid code:
+Certainly! If you prefer a lighter color for the outer border of the `graph_container` in your Mermaid diagram, you can adjust the `stroke` color to a lighter shade. Here's how you can modify the code to use a light color for the outer border:
 
 ```mermaid
 graph TD;
   subgraph graph_container
-    style graph_container fill:transparent, stroke:#f00, stroke-width:3px, stroke-dasharray: 0;
+    style graph_container fill:transparent, stroke:#ffcccc, stroke-width:3px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
@@ -20,13 +20,11 @@ graph TD;
 ```
 
 ### Explanation:
-- `style graph_container fill:transparent, stroke:#f00, stroke-width:3px, stroke-dasharray: 0;`
-  - `fill:transparent` ensures the subgraph (`graph_container`) has no background color.
-  - `stroke:#f00` sets the outer border color to red (`#f00`). You can change `#f00` to any other color code or name as desired.
-  - `stroke-width:3px` makes the outer border 3 pixels wide, ensuring it's bold and visible.
-  - `stroke-dasharray: 0` removes any dash pattern from the stroke, ensuring it's a solid line.
+- `stroke:#ffcccc` sets the outer border color to a light pinkish color (`#ffcccc`). You can adjust this to any light color of your choice by changing the hex code (`#ffcccc`) to another color code or name.
+- `stroke-width:3px` keeps the outer border bold and visible with a width of 3 pixels.
+- `stroke-dasharray: 0` ensures the border is solid without any dash pattern.
 
-With these style adjustments, the outer border of the `graph_container` should now be visible with the specified color and thickness. Adjust the colors and widths (`3px` in this example) as needed to achieve the desired appearance in your diagram.
+This adjustment should give you a light-colored outer border for the `graph_container` while keeping the inner elements styled according to their respective colors and styles. Adjust the color code as per your preference for the desired visual effect in your diagram.
 ```mermaid
 graph TD;
   subgraph graph_container
