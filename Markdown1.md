@@ -1,16 +1,16 @@
-It seems there was an error in the Mermaid syntax due to the incorrect usage of the `subgraph` directive. Here's the corrected Mermaid code:
+To achieve a transparent background for the overall diagram container and a double-lined border, you need to adjust the `graph_container` style and the individual node styles accordingly. Here's how you can modify the Mermaid code:
 
 ```mermaid
 graph TD;
 
   subgraph graph_container
-    style graph_container fill:#ccc, stroke:#000, stroke-width:2px;
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
-    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 5, 5, color:#fff;
-    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 5, 5, color:#fff;
-    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 5, 5, color:#fff;
-    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 5, 5, color:#fff;
-    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 5, 5, color:#fff;
+    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
   
     A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
     B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
@@ -22,12 +22,11 @@ graph TD;
 ```
 
 ### Explanation:
-- The `subgraph` directive should not have quotes around the subgraph name (`graph_container` instead of `"graph-container"`).
-- `style graph_container` sets the fill color (`fill:#ccc`), border color (`stroke:#000`), and border width (`stroke-width:2px`) for the entire diagram container.
-- Each individual node (`A`, `B`, `C`, `D`, `E`) retains its specific styling (`fill`, `stroke`, `stroke-width`, `stroke-dasharray`, `color`) within the `subgraph`.
+- `style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;` sets the overall container (`graph_container`) to have a transparent fill (`fill:transparent`), a black border (`stroke:#000`), with a stroke width of `2px` and no dash pattern (`stroke-dasharray: 0`).
+- `style A`, `style B`, `style C`, `style D`, `style E` specify the fill color (`fill:#000` for black background), stroke color (`stroke`), stroke width (`stroke-width:2px`), no dash pattern (`stroke-dasharray: 0`), and text color (`color:#fff` for white text).
+- The `<hr>` tags in the node labels provide a horizontal line to visually separate the heading from the content.
 
-This corrected setup should now render properly, encapsulating all the diagrams within one big bordered container with the specified styles.
-
+This should render the diagram with a transparent background, double-lined border, and the specified styles for each node. Adjust the styles further if needed based on your specific preferences or additional requirements.
 
 ```mermaid
 graph TD
