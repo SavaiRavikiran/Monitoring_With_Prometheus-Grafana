@@ -1,14 +1,16 @@
 ```mermaid
-graph TD
+graph TD;
   style A fill:#fff,stroke:#f00,stroke-width:2px,stroke-dasharray: 5, 5;
   B[Internal_release]
   C[Internal_components]
   D[Internal_stacks]
   E[Internal_platform]
   A[Internal_infrastructure]
+
   A -->|Linked to| B
   C -->|Linked to| D
-  Test even so, toham even So even even even Thus even butbe even so even even even even even even even even even even even so even even even even even so even even so even so even even so even so even even so even even so even NoF even so even No So even thus So even even though Are so even even Can New even So But even though even though we ?Deep
+  D -->|Linked to| E
+  E -->|Linked to| B
 ```
 
 
