@@ -1,3 +1,4 @@
+```mermaid
 graph TD;
   subgraph
     style graph_container fill:transparent, stroke:#ffcccc, stroke-width:3px, stroke-dasharray: 0;
@@ -14,6 +15,7 @@ graph TD;
     E -->|Release to use| B;
     C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
   end;
+```
 
 Certainly! If you prefer a lighter color for the outer border of the `graph_container` in your Mermaid diagram, you can adjust the `stroke` color to a lighter shade. Here's how you can modify the code to use a light color for the outer border:
 
