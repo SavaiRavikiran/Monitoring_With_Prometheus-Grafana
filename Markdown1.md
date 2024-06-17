@@ -1,3 +1,47 @@
+To make the border and title of each box colorful while keeping the inside of the nodes transparent, you need to adjust the styles of each node and add the styling for the titles. Here's how you can do it:
+
+```mermaid
+graph TD;
+
+  style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+  classDef default fill:#000, stroke:#fff, color:#fff;
+
+  subgraph "Internals files"
+    style A fill:transparent, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#f9f;
+    style B fill:transparent, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#9f9;
+    style C fill:transparent, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#ff9;
+    style D fill:transparent, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#9ff;
+    style E fill:transparent, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#f99;
+
+    A["<span style='color:#f9f;'>Internal_infrastructure</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["<span style='color:#9f9;'>Internal_release</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    C["<span style='color:#ff9;'>Internal_components</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D["<span style='color:#9ff;'>Internal_stacks</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["<span style='color:#f99;'>Internal_platform</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| A;
+    B -->|components version| D;
+  end;
+```
+
+### Explanation:
+
+- **Subgraph Border Styling:**
+  - `style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;` ensures the subgraph container has a transparent fill with a black border.
+
+- **Node Styling:**
+  - Each node (`A`, `B`, `C`, `D`, `E`) has a transparent fill with `fill:transparent` and colorful borders.
+  - The text color inside each node is set to the border color for consistency, using `color:#f9f` for node `A`, `color:#9f9` for node `B`, and so on.
+
+- **Title Styling:**
+  - Titles within each node are styled using HTML `<span>` tags with inline `style` attributes to set the title color, matching the border color.
+
+This setup should now render each node with a colorful border and title while keeping the inside of the nodes transparent. The entire graph background remains black with white text by default. Adjust the colors and styles further as needed.
+
+
+
+
+
+
+
+
 To make the background of the entire graph black while keeping the subgraph borders colorful and the inside of the nodes transparent, you need to set the background color of the entire graph and adjust the styles accordingly. Here's how you can do it:
 
 ```mermaid
