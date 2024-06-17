@@ -4,7 +4,7 @@ To create a colorful two-line border with a transparent fill inside the subgraph
 graph TD;
 
   subgraph "Internals files"
-    style graph_container fill:#fff, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
