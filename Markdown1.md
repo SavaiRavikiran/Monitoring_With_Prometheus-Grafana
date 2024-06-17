@@ -1,3 +1,43 @@
+Let's ensure the colors are applied correctly to the borders and titles, and that they are visible against a black background. Here's the revised version with more explicit styling to make the borders and titles colorful:
+
+```mermaid
+graph TD;
+  classDef default fill:#000, stroke:#000, color:#fff;
+
+  subgraph "Internals files"
+    style A fill:transparent, stroke:#ff00ff, stroke-width:2px, stroke-dasharray: 0;
+    style B fill:transparent, stroke:#00ff00, stroke-width:2px, stroke-dasharray: 0;
+    style C fill:transparent, stroke:#ffff00, stroke-width:2px, stroke-dasharray: 0;
+    style D fill:transparent, stroke:#00ffff, stroke-width:2px, stroke-dasharray: 0;
+    style E fill:transparent, stroke:#ff9999, stroke-width:2px, stroke-dasharray: 0;
+
+    A["<span style='color:#ff00ff;'>Internal_infrastructure</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["<span style='color:#00ff00;'>Internal_release</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    C["<span style='color:#ffff00;'>Internal_components</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D["<span style='color:#00ffff;'>Internal_stacks</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["<span style='color:#ff9999;'>Internal_platform</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| A;
+    B -->|components version| D;
+  end;
+```
+
+### Explanation:
+
+1. **Graph Default Style:**
+   - `classDef default fill:#000, stroke:#000, color:#fff;` sets the entire graph's default background to black, stroke to black, and text color to white.
+
+2. **Subgraph Border Styling:**
+   - `style A fill:transparent, stroke:#ff00ff, stroke-width:2px, stroke-dasharray: 0;` sets node `A`'s border to magenta and fill to transparent.
+   - `style B fill:transparent, stroke:#00ff00, stroke-width:2px, stroke-dasharray: 0;` sets node `B`'s border to green and fill to transparent.
+   - `style C fill:transparent, stroke:#ffff00, stroke-width:2px, stroke-dasharray: 0;` sets node `C`'s border to yellow and fill to transparent.
+   - `style D fill:transparent, stroke:#00ffff, stroke-width:2px, stroke-dasharray: 0;` sets node `D`'s border to cyan and fill to transparent.
+   - `style E fill:transparent, stroke:#ff9999, stroke-width:2px, stroke-dasharray: 0;` sets node `E`'s border to light red and fill to transparent.
+
+3. **Title Styling:**
+   - The title of each node is styled using HTML `<span>` tags with inline `style` attributes to set the title
+
+
+
+
+
 To make the border and title of each box colorful while keeping the inside of the nodes transparent, you need to adjust the styles of each node and add the styling for the titles. Here's how you can do it:
 
 ```mermaid
