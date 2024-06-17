@@ -1,8 +1,8 @@
 
 ```mermaid
 graph TD;
-  subgraph Rk
-    style Rk fill:transparent, stroke:#ffcccc, stroke-width:3px, stroke-dasharray: 0;
+  subgraph Internals_files
+    style Internals_files fill:transparent, stroke:#ffcccc, stroke-width:3px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
