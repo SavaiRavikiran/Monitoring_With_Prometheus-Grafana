@@ -1,8 +1,10 @@
+It seems there was an error in the Mermaid syntax due to the incorrect usage of the `subgraph` directive. Here's the corrected Mermaid code:
+
 ```mermaid
 graph TD;
 
-  subgraph "graph-container"
-    style graph-container fill:#ccc, stroke:#000, stroke-width:2px;
+  subgraph graph_container
+    style graph_container fill:#ccc, stroke:#000, stroke-width:2px;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 5, 5, color:#fff;
     style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 5, 5, color:#fff;
@@ -18,6 +20,13 @@ graph TD;
     
   end;
 ```
+
+### Explanation:
+- The `subgraph` directive should not have quotes around the subgraph name (`graph_container` instead of `"graph-container"`).
+- `style graph_container` sets the fill color (`fill:#ccc`), border color (`stroke:#000`), and border width (`stroke-width:2px`) for the entire diagram container.
+- Each individual node (`A`, `B`, `C`, `D`, `E`) retains its specific styling (`fill`, `stroke`, `stroke-width`, `stroke-dasharray`, `color`) within the `subgraph`.
+
+This corrected setup should now render properly, encapsulating all the diagrams within one big bordered container with the specified styles.
 
 
 ```mermaid
