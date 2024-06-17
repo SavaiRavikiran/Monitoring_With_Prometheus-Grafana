@@ -1,5 +1,22 @@
 ```mermaid
 graph TD
+  style A fill:#000,stroke:#000,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style B fill:#000,stroke:#000,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style C fill:#000,stroke:#000,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style D fill:#000,stroke:#000,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style E fill:#000,stroke:#000,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  
+  A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the structure of environments (app / isdt), instances (sbx, dev, devint, qa, prod) and worker nodes"] -->|Linked to| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the versions of all infrastructure and platform components"]
+  C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the list of all available components"] -->|Linked to| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the stacks and the components for each stack"]
+  D -->|Linked to| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define all platform environments (apps or isdt), the stacks and the release used by each environment"]
+  E -->|Linked to| B
+```
+
+
+
+
+```mermaid
+graph TD
   style A fill:#fff,stroke:#f9f,stroke-width:4px,stroke-dasharray: 5, 5
   style B fill:#fff,stroke:#9f9,stroke-width:4px,stroke-dasharray: 5, 5
   style C fill:#fff,stroke:#ff9,stroke-width:4px,stroke-dasharray: 5, 5
