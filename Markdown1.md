@@ -1,15 +1,14 @@
 ```mermaid
 graph TD
-  style A fill:#fff,stroke:#f9f,stroke-width:4px
-  style B fill:#fff,stroke:#9f9,stroke-width:4px
-  style C fill:#fff,stroke:#ff9,stroke-width:4px
-  style D fill:#fff,stroke:#9ff,stroke-width:4px
-  style E fill:#fff,stroke:#f99,stroke-width:4px
-  
-  A["Internal_infrastructure<br/>define the structure of environments (app / isdt), instances (sbx, dev, devint, qa, prod) and worker nodes"] -->|Linked to| B["Internal_release<br/>define the versions of all infrastructure and platform components"]
-  C["Internal_components<br/>define the list of all available components"] -->|Linked to| D["Internal_stacks<br/>define the stacks and the components for each stack"]
-  D -->|Linked to| E["Internal_platform<br/>define all platform environments (apps or isdt), the stacks and the release used by each environment"]
-  E -->|Linked to| B
+  style A fill:#fff,stroke:#f00,stroke-width:2px,stroke-dasharray: 5, 5;
+  B[Internal_release]
+  C[Internal_components]
+  D[Internal_stacks]
+  E[Internal_platform]
+  A[Internal_infrastructure]
+  A -->|Linked to| B
+  C -->|Linked to| D
+  Test even so, toham even So even even even Thus even butbe even so even even even even even even even even even even even so even even even even even so even even so even so even even so even so even even so even even so even NoF even so even No So even thus So even even though Are so even even Can New even So But even though even though we ?Deep
 ```
 
 
