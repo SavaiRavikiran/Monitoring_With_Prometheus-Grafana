@@ -1,9 +1,8 @@
 To make the outer border colorful and bold in the mermaid diagram, you can apply the `stroke` and `stroke-width` properties to the `graph_container` style. Here's how you can modify the code:
-
 ```mermaid
 graph TD;
 
-  subgraph Internals_files
+  subgraph "Internals files"
     style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
@@ -27,6 +26,8 @@ In this updated code:
 - `style graph_container stroke:#f00, stroke-width:3px;` sets the outer border (`graph_container`) to have a red (`#f00`) color and a width of 3 pixels (`3px`).
 
 You can adjust `#f00` to any other valid color code or name, and adjust `3px` to any desired border width, to achieve the colorful and bold outer border effect you want.
+
+
 ```mermaid
 graph TD;
 
