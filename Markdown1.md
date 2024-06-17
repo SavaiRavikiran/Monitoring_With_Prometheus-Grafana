@@ -29,6 +29,76 @@ graph TD;
     E -->|Release to use| B;
     C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
   end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================================
+
+### Internals Files
+
+A significant portion of our inventories is generated using playbooks. This includes files such as `hosts`, `build-releases-`, `stack-`, and lists of components in `host_vars` files. These generated files are managed by Internals Files.
+
+1. **Internal_infrastructure**: Defines the structure of environments (app / ISDT), instances (sbx, dev, devint, qa, prod), and worker nodes.
+
+2. **Internal_components**: Defines the list of all available components.
+
+3. **Internal_stacks**: Defines the stacks and the components for each stack.
+
+4. **Internal_platform**: Defines all platform environments (apps or ISDT), the stacks, and the release used by each environment.
+
+5. **Internal_release**: Defines the versions of all infrastructure and platform components.
+
+```mermaid
+graph TD;
+  subgraph Internals_files
+    style Internals_files fill:transparent, stroke:#ffcccc, stroke-width:3px, stroke-dasharray: 0;
+    
+    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  
+    A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| B;
+    C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
+  end;
 ```
 
 ### Explanation:
