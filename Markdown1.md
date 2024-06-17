@@ -1,3 +1,26 @@
+To make "Internal_infrastructure" the top and first box from the top, you need to adjust the order of nodes and their connections accordingly. Here's the updated diagram:
+
+```mermaid
+graph TD;
+
+  subgraph "Internals files"
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    
+    style A fill:transparent, stroke:#ff00ff, stroke-width:2px, stroke-dasharray: 0, color:#ff00ff;
+    style B fill:transparent, stroke:#00ff00, stroke-width:2px, stroke-dasharray: 0, color:#00ff00;
+    style C fill:transparent, stroke:#ffff00, stroke-width:2px, stroke-dasharray: 0, color:#ffff00;
+    style D fill:transparent, stroke:#00ffff, stroke-width:2px, stroke-dasharray: 0, color:#00ffff;
+    style E fill:transparent, stroke:#ff9999, stroke-width:2px, stroke-dasharray: 0, color:#ff9999;
+
+    A["<span style='color:#ff00ff;'>Internal_infrastructure</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["<span style='color:#00ff00;'>Internal_release</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    B -->|components version| D["<span style='color:#00ffff;'>Internal_stacks</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["<span style='color:#ff9999;'>Internal_platform</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| A;
+    C["<span style='color:#ffff00;'>Internal_components</span><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
+  end;
+```
+black with white text by default. Adjust the colors and styles further as needed.
+
 ```mermaid
 graph TD;
 
