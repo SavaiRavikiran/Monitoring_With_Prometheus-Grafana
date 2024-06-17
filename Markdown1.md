@@ -1,3 +1,32 @@
+I understand now. You want the outer border to be colorful but the inside of the subgraph to be transparent. Here’s the corrected version:
+
+```mermaid
+graph TD;
+
+  subgraph "Internals files"
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    
+    style A fill:transparent, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:transparent, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:transparent, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:transparent, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:transparent, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  
+    A["Internal_infrastructure<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["Internal_release<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    C["Internal_components<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D["Internal_stacks<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["Internal_platform<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| A;
+    B -->|components version| D;
+    
+  end;
+```
+
+In this version:
+- The outer border of the subgraph ("Internals files") is set to black with `stroke:#000` and `fill:transparent` ensures the inside of the subgraph is transparent.
+- Each node (`A`, `B`, `C`, `D`, `E`) has a transparent fill with `fill:transparent` and retains the colorful borders.
+
+This configuration should provide a colorful outer border with transparent inner nodes, making the internal contents visible through the transparent fill.
+
 To make the outer border of the subgraph colorless while keeping the inner elements styled, you can adjust the subgraph style to make the fill and stroke transparent. Here's the corrected version:
 
 ```mermaid
