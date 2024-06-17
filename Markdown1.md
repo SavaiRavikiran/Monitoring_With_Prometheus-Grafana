@@ -2,8 +2,8 @@
 
 ```mermaid
 graph TD;
-
-    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+  subgraph graph_container
+    style graph_container fill:transparent, stroke:#000, stroke-width:0px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
@@ -16,7 +16,7 @@ graph TD;
     D -->|stacks| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
     E -->|Release to use| B;
     C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
-
+  end;
 ```
 
 This diagram correctly represents the flow you described, with each component pointing to the appropriate next step in the sequence.
