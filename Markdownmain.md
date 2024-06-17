@@ -6,12 +6,10 @@ graph TD;
   A --> D["Build X"];
   A --> E["Product X"];
   
-  // Second row
   B --> F["Platform X"];
   C --> G["Infra Y"];
   D --> H["Stacks X"];
   
-  // Third row
   G --> I["Host Y"];
   H --> J["Component X"];
   J --> I["Host X"];
