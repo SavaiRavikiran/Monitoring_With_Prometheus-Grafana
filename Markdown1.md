@@ -1,7 +1,7 @@
 ```mermaid
 graph TD;
 
-  subgraph graph_container
+  subgraph 
     style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
