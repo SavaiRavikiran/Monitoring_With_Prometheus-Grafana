@@ -1,4 +1,18 @@
 ```mermaid
+graph LR
+  A[Internal_infrastructure]
+  B[Internal_release]
+  C[Internal_components]
+  D[Internal_stacks]
+  E[Internal_platform]
+  
+  A-->B
+  C-->D
+  D-->E
+  E-->B
+```
+
+```mermaid
 graph TD
   subgraph "Kube-prometheus-stack"
     A[Grafana]-->|query and visualize| B[(Prometheus)]
