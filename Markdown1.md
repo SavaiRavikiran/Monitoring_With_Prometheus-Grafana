@@ -1,4 +1,40 @@
+To make the text in the `graph_container` appear with a background color but without affecting the border, you can use a combination of CSS styling within the Mermaid diagram. Unfortunately, Mermaid does not directly support background colors for text inside nodes or subgraphs. However, you can achieve a similar effect by adding custom CSS using HTML labels (`%%html`).
 
+Here's how you can modify your diagram to display text with a background color:
+
+```mermaid
+graph TD;
+
+  subgraph graph_container
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    
+    style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    
+    %%html
+    A["<div style='background-color: #f9f; padding: 8px; border-radius: 4px;'>Internal_infrastructure<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration</div>"] -->|Release to use| B["<div style='background-color: #f9f; padding: 8px; border-radius: 4px;'>Internal_release<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release</div>"];
+    %%html
+    B -->|components version| D["<div style='background-color: #f9f; padding: 8px; border-radius: 4px;'>Internal_stacks<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group</div>"];
+    %%html
+    D -->|stacks| E["<div style='background-color: #f9f; padding: 8px; border-radius: 4px;'>Internal_platform<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment</div>"];
+    %%html
+    E -->|Release to use| B;
+    %%html
+    C["<div style='background-color: #f9f; padding: 8px; border-radius: 4px;'>Internal_components<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components</div>"] -->|components| D;
+    
+    style graph_container stroke:#000, stroke-width:2px; /* Adjust color and width for outer border */
+    
+  end;
+```
+
+### Explanation:
+- **Node Customization**: Each node (`A`, `B`, `C`, `D`, `E`) now uses `%%html` to define custom HTML for the node label. This allows us to style the text with a background color (`background-color: #f9f;`), padding (`padding: 8px;`), and border-radius (`border-radius: 4px;`) to make it visually distinct.
+- **Border Styling**: The `graph_container` retains its styling for a colored border (`stroke:#000; stroke-width:2px;`).
+
+This approach effectively addresses the requirement to highlight text with a background color while keeping the border unaffected and visible. Adjust the colors and styles (`#f9f` for background color, border color, padding, etc.) according to your design preferences.
 
 ```mermaid
 graph TD;
