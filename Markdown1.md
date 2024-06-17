@@ -3,7 +3,7 @@ Thank you for providing the correct flow. Based on your description, here is the
 ```mermaid
 graph TD;
 
-  subgraph Internals_files
+  subgraph graph_container
     style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
