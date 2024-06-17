@@ -187,7 +187,7 @@ Create the file and paste the YAML values for your component's Helm chart. Here,
 ```yaml
 prometheus-elasticsearch-exporter:
   es:
-    uri: "http://elastic:0jVEX+Cztz-HeZR4O@elasticsearch-master.isdt-sbxelastic.svc.cluster.local:9200"
+    uri: "http://user:password@elasticsearch-master.isdt-sbxelastic.svc.cluster.local:9200"
     all: true
     indices: true
     indices_settings: true
