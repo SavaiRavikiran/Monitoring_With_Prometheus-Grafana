@@ -1,3 +1,50 @@
+To bring the `Internal_infrastructure` node to the top in your Mermaid diagram, you need to adjust the order of the nodes and their connections. Here's the updated diagram where `Internal_infrastructure` is placed at the top:
+
+```mermaid
+graph TD;
+
+  subgraph Internals files<br/> A large part of the inventories is generated using playbooks. <br/>It's the case of files: hosts, build-releases-, stack- and the lists of components in the host_vars files. <br/>This generated files are manages by Internales files.<br/><br/>
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    
+    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  
+    A["Internal_infrastructure<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["Internal_release<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    C["Internal_components<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D["Internal_stacks<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["Internal_platform<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| A;
+    B -->|components version| D;
+    
+  end;
+```
+
+### Explanation:
+- I've reordered the nodes within the `subgraph graph_container` to place `Internal_infrastructure` (`A`) at the top.
+- Adjusted the connections (`-->`) to maintain the flow as per your requirement.
+
+This should now display the `Internal_infrastructure` node at the top of your Mermaid diagram. Adjust the styling and connections further as needed for your specific layout preferences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```mermaid
 graph TD;
 
