@@ -1,12 +1,10 @@
-It seems there was a misunderstanding with the Mermaid syntax. Mermaid requires subgraphs to have a specific structure, including a name or identifier. However, we can achieve a similar effect by defining styles without explicitly naming the subgraph.
-
-Here's the corrected approach to achieve the desired result while maintaining Mermaid syntax:
+Here's a corrected approach that should work without syntax errors:
 
 ```mermaid
 graph TD;
 
   subgraph invisible_subgraph
-    style fill:transparent, stroke:transparent, stroke-width:0px, stroke-dasharray: 0;
+    style invisible_subgraph fill:transparent, stroke:transparent, stroke-width:0px;
     
     style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style B fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
@@ -20,10 +18,16 @@ graph TD;
     E -->|Release to use| B;
     C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
     
-    style invisible_subgraph stroke:transparent, stroke-width:0px; /* Make outer border invisible */
-    
   end;
+
 ```
+
+### Explanation:
+- **Subgraph and Styles**: The subgraph is named `invisible_subgraph`, which adheres to Mermaid syntax requirements.
+- **Styles**: The `invisible_subgraph` is styled to have a transparent fill, stroke, and no stroke width (`stroke:transparent, stroke-width:0px`). This effectively makes the outer border of the subgraph invisible.
+- **Node Styles**: Nodes (`A`, `B`, `C`, `D`, `E`) within the subgraph are styled individually with visible borders and appropriate fills.
+
+This structure should render correctly without syntax errors and achieves the goal of visually hiding the outer subgraph container while maintaining the diagram's structure and styling.
 
 In this corrected code:
 - The subgraph is named `invisible_subgraph`, which is a valid Mermaid syntax requirement.
