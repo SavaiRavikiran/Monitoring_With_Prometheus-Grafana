@@ -2,15 +2,15 @@
 
 A significant portion of our inventories is generated using playbooks. This includes files such as `hosts`, `build-releases-`, `stack-`, and lists of components in `host_vars` files. These generated files are managed by Internals Files.
 
-1. **Internal_infrastructure**: Defines the structure of environments (app / ISDT), instances (sbx, dev, devint, qa, prod), and worker nodes.
+1. <span style="color:#f9f;">**Internal_infrastructure**</span>: Defines the structure of environments (app / ISDT), instances (sbx, dev, devint, qa, prod), and worker nodes.
 
-2. **Internal_components**: Defines the list of all available components.
+2. <span style="color:#9f9;">**Internal_components**</span>: Defines the list of all available components.
 
-3. **Internal_stacks**: Defines the stacks and the components for each stack.
+3. <span style="color:#ff9;">**Internal_stacks**</span>: Defines the stacks and the components for each stack.
 
-4. **Internal_platform**: Defines all platform environments (apps or ISDT), the stacks, and the release used by each environment.
+4. <span style="color:#9ff;">**Internal_platform**</span>: Defines all platform environments (apps or ISDT), the stacks, and the release used by each environment.
 
-5. **Internal_release**: Defines the versions of all infrastructure and platform components.
+5. <span style="color:#f99;">**Internal_release**</span>: Defines the versions of all infrastructure and platform components.
 
 ```mermaid
 graph TD;
