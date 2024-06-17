@@ -29,7 +29,7 @@ graph TD;
     E -->|Release to use| B;
     C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
   end;
-
+```
 
 
 
