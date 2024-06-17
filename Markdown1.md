@@ -1,3 +1,48 @@
+It seems there was a syntax issue in the previous attempt to render the Mermaid diagrams. Let's correct it:
+
+### First Diagram
+
+```mermaid
+graph TD
+  style A fill:#000,stroke:#f9f,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style B fill:#000,stroke:#9f9,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style C fill:#000,stroke:#ff9,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style D fill:#000,stroke:#9ff,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style E fill:#000,stroke:#f99,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  
+  A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the structure of environments (app / isdt), instances (sbx, dev, devint, qa, prod) and worker nodes"] -->|Linked to| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the versions of all infrastructure and platform components"]
+  C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the list of all available components"] -->|Linked to| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the stacks and the components for each stack"]
+  D -->|Linked to| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define all platform environments (apps or isdt), the stacks and the release used by each environment"]
+  E -->|Linked to| B
+```
+
+### Second Diagram (Enclosed in a Subgraph)
+
+```mermaid
+graph TD
+  style A fill:#000,stroke:#f9f,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style B fill:#000,stroke:#9f9,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style C fill:#000,stroke:#ff9,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style D fill:#000,stroke:#9ff,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  style E fill:#000,stroke:#f99,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
+  
+  subgraph ""
+    style graph stroke:#ccc,stroke-width:2px,stroke-dasharray: 0
+    A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the structure of environments (app / isdt), instances (sbx, dev, devint, qa, prod) and worker nodes"] -->|Linked to| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the versions of all infrastructure and platform components"]
+    C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the list of all available components"] -->|Linked to| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the stacks and the components for each stack"]
+    D -->|Linked to| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define all platform environments (apps or isdt), the stacks and the release used by each environment"]
+    E -->|Linked to| B
+  end
+```
+
+### Notes:
+- Each diagram has been corrected for proper Mermaid syntax.
+- The first diagram defines boxes with black backgrounds (`fill:#000`) and colorful borders (`stroke` properties).
+- The second diagram is enclosed in a subgraph (`subgraph ""`) with a gray border (`stroke:#ccc`) around the entire content.
+- Each box in both diagrams contains bold headings (`**Heading**`) and content separated by horizontal lines (`<hr>`).
+
+Ensure your Mermaid environment supports the syntax correctly, or consider using a Mermaid live editor for accurate visualization.
+
 ```mermaid
 graph TD
   style A fill:#000,stroke:#f9f,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
