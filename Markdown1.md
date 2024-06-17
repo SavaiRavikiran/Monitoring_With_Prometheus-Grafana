@@ -1,3 +1,32 @@
+To highlight the text "graph_container" with a background color without affecting other text or borders in the diagram, you can use the `classDef` and `class` attributes in Mermaid. This allows you to define custom styles for specific elements. Here's how you can achieve it:
+
+```mermaid
+graph TD;
+
+  subgraph graph_container
+    classDef graph_container_text fill:#f0f, color:#000, font-weight:bold;
+    
+    style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  
+    class graph_container_text A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"];
+    B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"];
+    
+  end;
+```
+
+### Explanation:
+- **classDef**: `classDef graph_container_text fill:#f0f, color:#000, font-weight:bold;` defines a class `graph_container_text` with a purple (`#f0f`) background color, black text color (`#000`), and bold font weight. This will apply to the text inside the nodes designated with this class.
+- **class**: `class graph_container_text A["..."]` applies the `graph_container_text` class to node `A`, which contains the text "Internal_infrastructure". This will highlight this specific node's text with the defined background and text color, making it stand out.
+
+This approach ensures that only the specified text inside the node (`A` in this case) is styled with the background color, while other nodes and their borders remain unaffected. Adjust the colors (`#f0f` for background, `#000` for text) and other styles (`font-weight:bold;`) as needed to achieve the desired appearance.
+
 It seems there was an issue with the Mermaid diagram rendering due to the use of `%%html` in an unsupported manner. Mermaid diagrams do not directly support HTML tags for styling within nodes or subgraphs. However, we can achieve a similar effect by using Unicode characters for creating a background-like effect around text.
 
 Here's an adjusted approach using Unicode characters to simulate a background color behind the text:
