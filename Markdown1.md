@@ -1,4 +1,4 @@
-To make the border color full and bold in the mermaid diagram, you can adjust the `stroke` and `stroke-width` properties in the styles. Here's the updated mermaid code with bold and full-colored borders:
+Thank you for providing the correct flow. Based on your description, here is the updated mermaid diagram:
 
 ```mermaid
 graph TD;
@@ -6,11 +6,11 @@ graph TD;
   subgraph graph_container
     style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
-    style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style B fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style C fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style D fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
-    style E fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
   
     A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
     B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
@@ -21,18 +21,7 @@ graph TD;
   end;
 ```
 
-In this code:
-- `stroke:#000;` sets the border color to black (`#000`).
-- `stroke-width:2px;` sets the border width to 2 pixels, making it bold.
-
-Adjust these values (`#000` for black, `2px` for 2 pixels) as needed to achieve the desired appearance.
-
-
-
-
-
-
-
+This diagram correctly represents the flow you described, with each component pointing to the appropriate next step in the sequence.
 
 
 
