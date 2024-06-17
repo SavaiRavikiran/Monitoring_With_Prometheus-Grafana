@@ -1,9 +1,9 @@
-To bring the `Internal_infrastructure` node to the top in your Mermaid diagram, you need to adjust the order of the nodes and their connections. Here's the updated diagram where `Internal_infrastructure` is placed at the top:
+To create a valid and error-free Mermaid diagram from your description, let's structure it properly and correct the syntax:
 
 ```mermaid
 graph TD;
 
-  subgraph Internals files<br/> A large part of the inventories is generated using playbooks. <br/>It's the case of files: hosts, build-releases-, stack- and the lists of components in the host_vars files. <br/>This generated files are manages by Internales files.<br/><br/>
+  subgraph "Internals files<br/> A large part of the inventories is generated using playbooks. <br/>It's the case of files: hosts, build-releases-, stack- and the lists of components in the host_vars files. <br/>This generated files are manages by Internales files.<br/><br/>"
     style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
@@ -21,23 +21,8 @@ graph TD;
   end;
 ```
 
-### Explanation:
-- I've reordered the nodes within the `subgraph graph_container` to place `Internal_infrastructure` (`A`) at the top.
-- Adjusted the connections (`-->`) to maintain the flow as per your requirement.
-
-This should now display the `Internal_infrastructure` node at the top of your Mermaid diagram. Adjust the styling and connections further as needed for your specific layout preferences.
-
-
-
-
-
-
-
-
-
-
-
-
+In this corrected version:
+- The `subgraph` now properly encapsulates the text content with HTML line breaks (`<br/>`).
 
 
 
