@@ -1,3 +1,43 @@
+To make the border color full and bold in the mermaid diagram, you can adjust the `stroke` and `stroke-width` properties in the styles. Here's the updated mermaid code with bold and full-colored borders:
+
+```mermaid
+graph TD;
+
+  subgraph graph_container
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    
+    style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  
+    A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| B;
+    C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
+    
+  end;
+```
+
+In this code:
+- `stroke:#000;` sets the border color to black (`#000`).
+- `stroke-width:2px;` sets the border width to 2 pixels, making it bold.
+
+Adjust these values (`#000` for black, `2px` for 2 pixels) as needed to achieve the desired appearance.
+
+
+
+
+
+
+
+
+
+
+
+
 To correct the flow so that "Internal_platform" points to "Internal_infrastructure" instead of "Internal_release", you need to modify the last connection. Here's the updated mermaid code:
 
 ```mermaid
