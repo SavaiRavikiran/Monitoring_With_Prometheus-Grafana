@@ -1,6 +1,3 @@
-Here's the cleaned-up and formatted Markdown file:
-
-```markdown
 # ISDT Inventories Description
 
 ## Internal Files
