@@ -1,3 +1,21 @@
+
+```mermaid
+graph TD
+  style A fill:#fff,stroke:#f9f,stroke-width:4px
+  style B fill:#fff,stroke:#9f9,stroke-width:4px
+  style C fill:#fff,stroke:#ff9,stroke-width:4px
+  style D fill:#fff,stroke:#9ff,stroke-width:4px
+  style E fill:#fff,stroke:#f99,stroke-width:4px
+
+  A[Internal_infrastructure] -->|Linked to| B[Internal_release]
+  C[Internal_components] -->|Linked to| D[Internal_stacks]
+  D -->|Linked to| E[Internal_platform]
+  E -->|Linked to| B
+```
+
+
+
+
 ```mermaid
 graph LR
   style A fill:#f9f,stroke:#333,stroke-width:4px
