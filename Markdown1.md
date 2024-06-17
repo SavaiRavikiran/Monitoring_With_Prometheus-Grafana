@@ -3,7 +3,7 @@ To create a valid and error-free Mermaid diagram from your description, let's st
 ```mermaid
 graph TD;
 
-  subgraph "Internals files<br/> A large part of the inventories is generated using playbooks. <br/>It's the case of files: hosts, build-releases-, stack- and the lists of components in the host_vars files. <br/>This generated files are manages by Internales files.<br/><br/>"
+  subgraph "Internals files"
     style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
