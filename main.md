@@ -102,7 +102,7 @@ Add your component to the components list:
 
 ```yaml
 versions:
-  - release: '2.0'
+  - release: '3.5'
     component:
       # ... other components
       - name: PROMETHEUS_ELASTICSEARCH_EXPORTER_581
@@ -151,14 +151,14 @@ internal_platform:
     - name: sbx
       instances:
         - name: isdt
-          release: "2.0"
+          release: "3.5"
           products:
             - name: isdt
               hosts:
                 # ... other components
                 - name: isdt-sbxprometheus
                   stack: "ISDT"
-                  release: "2.0"
+                  release: "3.5"
                   status: ":heavy_check_mark:"
                   component_pack: [Prometheus] # Use the exact same name of the pack defined in the previous step here
                   # optional_component: [PROMETHEUS] # DELETED
