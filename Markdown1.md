@@ -3,9 +3,7 @@ To create a valid and error-free Mermaid diagram from your description, let's st
 ```mermaid
 graph TD;
 
-  subgraph "Internals files"
-    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
-    
+  subgraph "Internals files"    
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
