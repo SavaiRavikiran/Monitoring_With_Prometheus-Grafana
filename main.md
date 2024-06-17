@@ -51,9 +51,9 @@ ansible-playbook -i ./inventories playbooks/internal_Generate-Host-Components.ym
 
 ## Inventories Files
 
-![ISDTv2-Diagram](./assets/Inventories-all.png)
 
-## How to Add a Component
+
+## Process How to Add a Component
 
 ### Add a New Standalone Component
 
@@ -61,9 +61,9 @@ TODO: Approximately the same steps as the following.
 
 ### Add a Component Dependent on Another
 
-In this example, I (Ryan) will explain how I added the prerequisites exporter, which is dependent on the already existing Prometheus component, to the repository.
+In this example, will see how I added the elasticsearch exporter, which is dependent on the already existing Prometheus component, to the repository.
 
-For my exporter, I have a Helm chart in Harbor, and the container image required is also there.
+For my exporter, I have a Helm chart in Github, and the container image required is also there.
 
 Here are the steps to do:
 
@@ -249,9 +249,9 @@ TASK [platform_Generic-Deploy : Helm Load Dependencies] ************************
 fatal: [isdt-sbxprometheus]: FAILED! => {"changed": true, "cmd": ["helm", "dependency", "build"], "delta": "0:00:00.026715", "end": "2023-01-11 15:02:56.256125", "msg": "non-zero return code", "rc": 1, "start": "2023-01-11 15:02:56.229410", "stderr": "Error: cannot load values.yaml: error converting YAML to JSON: yaml: line 254: did not find expected key", "stderr_lines": ["Error: cannot load values.yaml: error converting YAML to JSON: yaml: line 254: did not find expected key"], "stdout": "", "stdout_lines": []}
 ```
 
-The YAML generated at `/app/docker/devops/ISDT/deploy/workspace_temp/isdt-sbxprometheus/values.yaml` and used for the task "Helm load dependencies" was not valid in my case. That's because of an incorrect append between the values files of my components `platform-isdt/isdt/playbooks/templates/Release_2.0/PROMETHEUS.yml` and `platform-isdt/isdt/playbooks/templates/Release_2.0/PREREQ_EXPORTER.yml`.
+The YAML generated at `/app/docker/devops/ISDT/deploy/workspace_temp/isdt-sbxprometheus/values.yaml` and used for the task "Helm load dependencies" was not valid in my case. That's because of an incorrect append between the values files of my components `platform-isdt/isdt/playbooks/templates/Release_3.5/PROMETHEUS_ELASTICSEARCH_EXPORTER.yml` and `platform-isdtisdt/playbooks/templates/Release_3.5/PROMETHEUS_ELASTICSEARCH_EXPORTER.yml`.
 
-I could fix it by adding a newline at line 1 of my `PROMETHEUS.yml` file:
+I could fix it by adding a newline at line 1 of my `PROMETHEUS_ELASTICSEARCH_EXPORTER.yml` file:
 
 ```diff
 + 
