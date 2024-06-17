@@ -1,5 +1,22 @@
 ```mermaid
 graph LR
+  style A fill:#f9f,stroke:#333,stroke-width:4px
+  style B fill:#9f9,stroke:#333,stroke-width:4px
+  style C fill:#ff9,stroke:#333,stroke-width:4px
+  style D fill:#9ff,stroke:#333,stroke-width:4px
+  style E fill:#f99,stroke:#333,stroke-width:4px
+
+  A[Internal_infrastructure] -->|Linked to| B[Internal_release]
+  C[Internal_components] -->|Linked to| D[Internal_stacks]
+  D -->|Linked to| E[Internal_platform]
+  E -->|Linked to| B
+```
+
+
+
+
+```mermaid
+graph LR
   A[Internal_infrastructure]
   B[Internal_release]
   C[Internal_components]
