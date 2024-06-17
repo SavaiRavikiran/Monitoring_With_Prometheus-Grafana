@@ -1,13 +1,13 @@
 ```mermaid
 graph TD
-  style graph-container fill:#000,stroke:#ccc,stroke-width:2px,stroke-dasharray: 0,color:#fff
   style A fill:#000,stroke:#f9f,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
   style B fill:#000,stroke:#9f9,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
   style C fill:#000,stroke:#ff9,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
   style D fill:#000,stroke:#9ff,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
   style E fill:#000,stroke:#f99,stroke-width:2px,stroke-dasharray: 5, 5,color:#fff
   
-  subgraph graph-container
+  subgraph ""
+    style graph-container stroke:#ccc,stroke-width:2px,stroke-dasharray: 0
     A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the structure of environments (app / isdt), instances (sbx, dev, devint, qa, prod) and worker nodes"] -->|Linked to| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the versions of all infrastructure and platform components"]
     C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the list of all available components"] -->|Linked to| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define the stacks and the components for each stack"]
     D -->|Linked to| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define all platform environments (apps or isdt), the stacks and the release used by each environment"]
