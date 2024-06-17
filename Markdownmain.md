@@ -1,6 +1,6 @@
 ```mermaid
 graph TD;
-  // First row
+
   A["Global definition"] --> B["Instance X"];
   A --> C["Environment X"];
   A --> D["Build X"];
