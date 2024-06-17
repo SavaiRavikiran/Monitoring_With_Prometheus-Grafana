@@ -1,3 +1,46 @@
+If you want to remove the label or name `graph_container` from the diagram while still keeping the styling and structure intact, you can simply remove the `graph_container` label from the subgraph. Mermaid diagrams don't necessarily require explicit naming of subgraphs unless needed for clarity or reference.
+
+Here's the updated code without the `graph_container` label:
+
+```mermaid
+graph TD;
+
+  subgraph
+    style fill:transparent, stroke:transparent, stroke-width:0px, stroke-dasharray: 0;
+    
+    style A fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#000, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  
+    A["**Internal_infrastructure**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["**Internal_release**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    B -->|components version| D["**Internal_stacks**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["**Internal_platform**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| B;
+    C["**Internal_components**<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D;
+    
+    style stroke:transparent, stroke-width:0px; /* Make outer border invisible */
+    
+  end;
+```
+
+In this modified code:
+- The `subgraph` does not have a label (`graph_container`) anymore.
+- The styles and connections remain the same as in the previous examples, ensuring the structure and appearance of the diagram are preserved.
+
+Now, the diagram will display the elements (`A`, `B`, `C`, `D`, `E`) without any subgraph label, focusing directly on the content and connections defined within it.
+
+
+
+
+
+
+
+
+
+
+
 ```mermaid
 graph TD;
 
