@@ -1,3 +1,26 @@
+To make the background of the entire graph black while keeping the subgraph borders colorful and the inside of the nodes transparent, you need to set the background color of the entire graph and adjust the styles accordingly. Here's how you can do it:
+
+```mermaid
+graph TD;
+  style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+  classDef default fill:#000, stroke:#fff, color:#fff;
+
+  subgraph "Internals files"
+    style A fill:transparent, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:transparent, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:transparent, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:transparent, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:transparent, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+
+    A["Internal_infrastructure<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["Internal_release<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    C["Internal_components<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D["Internal_stacks<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["Internal_platform<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| A;
+    B -->|components version| D;
+  end;
+```
+
+
 I understand now. You want the outer border to be colorful but the inside of the subgraph to be transparent. Here’s the corrected version:
 
 ```mermaid
