@@ -1,10 +1,10 @@
-To create a colorful two-line border with a transparent fill inside the subgraph in your Mermaid diagram, you can adjust the styles as follows:
+To make the outer border of the subgraph colorless while keeping the inner elements styled, you can adjust the subgraph style to make the fill and stroke transparent. Here's the corrected version:
 
 ```mermaid
 graph TD;
 
   subgraph "Internals files"
-    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    style graph_container fill:transparent, stroke:transparent, stroke-width:2px, stroke-dasharray: 0;
     
     style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
     style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
@@ -21,29 +21,32 @@ graph TD;
   end;
 ```
 
-### Explanation:
+In this version:
+- `style graph_container fill:transparent, stroke:transparent, stroke-width:2px, stroke-dasharray: 0;` makes both the fill and the stroke of the subgraph container transparent, effectively removing the outer border.
+- The individual styles for nodes (`A`, `B`, `C`, `D`, `E`) are retained as specified.
 
-1. **Subgraph Border Styling:**
-   - `style graph_container fill:#fff, stroke:#000, stroke-width:2px, stroke-dasharray: 0;`
-     - `fill:#fff` sets the fill color of the subgraph to white, making the inside of the border transparent.
-     - `stroke:#000` sets the color of the outer border lines to black.
-     - `stroke-width:2px` specifies the width of the border lines to 2 pixels.
-     - `stroke-dasharray: 0` removes any dash pattern from the border lines.
-
-2. **Node Styling:**
-   - Each node (`A`, `B`, `C`, `D`, `E`) retains its individual fill and stroke styles (`fill:#000` for black fill, `stroke:#f9f`, `stroke:#9f9`, `stroke:#ff9`, `stroke:#9ff`, `stroke:#f99` for different colors, respectively).
-   - `color:#fff` ensures the text color within the nodes is white for contrast.
-
-3. **Node Connections:**
-   - Arrows (`-->`) and labels (`|Release to use|`, `|components|`, etc.) define the relationships between nodes within the subgraph.
-
-This setup should now display a subgraph with a colorful two-line border (black outer, white inner) and transparent fill inside the border for your Mermaid diagram. Adjust colors and styles further to match your visual preferences.
+This setup should now render the subgraph without a visible outer border, while the nodes inside the subgraph will still have their specified styles and relationships.
 
 
+To create a colorful two-line border with a transparent fill inside the subgraph in your Mermaid diagram, you can adjust the styles as follows:
 
-
-
-
+```mermaid
+graph TD;
+  subgraph "Internals files"
+    style graph_container fill:transparent, stroke:#000, stroke-width:2px, stroke-dasharray: 0;
+    style A fill:#000, stroke:#f9f, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style B fill:#000, stroke:#9f9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style C fill:#000, stroke:#ff9, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style D fill:#000, stroke:#9ff, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+    style E fill:#000, stroke:#f99, stroke-width:2px, stroke-dasharray: 0, color:#fff;
+  
+    A["Internal_infrastructure<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define environments, instances <br/>hosts and host configuration"] -->|Release to use| B["Internal_release<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components version <br/>by release"];
+    C["Internal_components<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define available<br/> components"] -->|components| D["Internal_stacks<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define groups of components <br/>and version by group"];
+    D -->|stacks| E["Internal_platform<br/><hr style='margin-top: 8px; margin-bottom: 8px;'/>Define components and release <br/>to use for each environment"];
+    E -->|Release to use| A;
+    B -->|components version| D;
+  end;
+```
 
 
 
@@ -70,12 +73,6 @@ graph TD;
   end;
 ```
 
-In this corrected version:
-- The `style graph_container fill:transparent` line ensures the subgraph background is transparent.
-- Each node (`A`, `B`, `C`, `D`, `E`) retains its specified fill and stroke styles.
-- Nodes are connected with arrows (`-->`) and labeled relationships (`|Release to use|`, `|components|`, etc.).
-
-This should now render as a valid Mermaid diagram with a transparent border for the `Internals files` subgraph and styled nodes representing different components of your internal infrastructure management system. Adjust further as needed for your specific visualization requirements.
 
 ```mermaid
 graph TD;
